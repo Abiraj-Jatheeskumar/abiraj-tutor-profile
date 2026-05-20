@@ -125,7 +125,7 @@ export default function Contact() {
                 </div>
                 {/* Arrow indicator */}
                 <div className="ml-auto w-8 h-8 rounded-full border border-white/10 hidden sm:flex items-center justify-center shrink-0 group-hover:border-[#f59e0b]/40 group-hover:bg-[#f59e0b]/8 text-white/30 group-hover:text-[#f59e0b] transition-all duration-300">
-                  <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
                 </div>

@@ -22,10 +22,10 @@ const subjects = [
     num: '01',
     icon: <ChemistryIcon />,
     title: 'A/L Chemistry',
-    badge: 'Tamil Medium',
+    badge: 'Tamil Medium Coaching',
     desc: 'Structured curriculum designed to master physical calculation dynamics, organic synthesis charts, and inorganic analytical methodologies.',
-    audience: 'G.C.E. Advanced Level Science Stream Students',
-    mediums: 'Tamil Medium (Batch & Individual classes)',
+    audience: 'A/L Science Stream',
+    mediums: 'Tamil Medium (Batch & Individual)',
     features: [
       'In-depth Physical Chemistry steps & calculation shortcuts',
       'Logical maps of Organic Chemistry conversion pathways',
@@ -56,8 +56,8 @@ const subjects = [
     title: 'A/L & O/L ICT',
     badge: 'English & Tamil Medium',
     desc: 'Comprehensive coverage of logic structures, database theory, systems, data networks, and programming architectures.',
-    audience: 'G.C.E. A/L & O/L Students sitting for ICT',
-    mediums: 'English & Tamil Medium (Batch & Individual classes)',
+    audience: 'A/L & O/L Students',
+    mediums: 'English & Tamil (Batch & Individual)',
     features: [
       'Hands-on Python programming & logic formulation steps',
       'Database systems, SQL queries, & ER-diagram tutorials',
@@ -108,7 +108,7 @@ function SubjectCard({ subject }) {
   return (
     <div
       ref={ref}
-      className="bg-[#121212]/45 backdrop-blur-md border border-white/10 rounded-2xl p-4.5 sm:p-6 flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.4)] hover:border-[#f59e0b]/35 hover:shadow-[0_20px_60px_rgba(245,158,11,0.06)] transition-all duration-500 group relative overflow-hidden h-full text-left"
+      className="bg-[#121212]/45 backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-6 flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.4)] hover:border-[#f59e0b]/35 hover:shadow-[0_20px_60px_rgba(245,158,11,0.06)] transition-all duration-500 group relative overflow-hidden h-full text-left"
       style={{ opacity: 0, animation: inView ? 'fadeInUp 0.8s ease-out forwards' : 'none' }}
     >
       {/* Background soft glows on card hover */}
@@ -118,54 +118,53 @@ function SubjectCard({ subject }) {
       {/* Top Section */}
       <div className="relative z-10">
         {/* Header Row */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between items-start gap-3 border-b border-white/5 pb-4">
-          <div className="flex items-center gap-3">
-            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#f59e0b]/10 border border-[#f59e0b]/30 shadow-[0_4px_12px_rgba(245,158,11,0.15)] flex items-center justify-center text-[#f59e0b] shrink-0 group-hover:scale-105 transition-transform duration-300">
-              {subject.icon}
-            </div>
-            <div>
-              <h3 className="font-display text-base sm:text-lg md:text-xl font-bold text-white leading-tight group-hover:text-[#f59e0b] transition-colors">
-                {subject.title}
-              </h3>
-              <p className="font-body text-white/40 text-[9px] sm:text-[10px] mt-0.5 leading-none">Subject Stream Coaching</p>
-            </div>
+        <div className="flex items-center gap-3 border-b border-white/5 pb-3">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#f59e0b]/10 border border-[#f59e0b]/30 shadow-[0_4px_12px_rgba(245,158,11,0.15)] flex items-center justify-center text-[#f59e0b] shrink-0 group-hover:scale-105 transition-transform duration-300">
+            {subject.icon}
           </div>
-          <span className="inline-block w-fit text-[#f59e0b] text-[8px] font-black uppercase tracking-[0.15em] bg-[#f59e0b]/10 border border-[#f59e0b]/30 px-2.5 py-1 rounded-full shrink-0">
-            {subject.badge}
-          </span>
+          <div>
+            <h3 className="font-display text-base sm:text-lg md:text-xl font-bold text-white leading-tight group-hover:text-[#f59e0b] transition-colors">
+              {subject.title}
+            </h3>
+            <p className="font-body text-[#f59e0b] text-[9px] font-semibold uppercase tracking-wider mt-0.5 leading-none">{subject.badge}</p>
+          </div>
         </div>
 
         {/* Description Tagline */}
-        <p className="font-body text-white/70 text-xs mt-3.5 leading-relaxed">
+        <p className="font-body text-white/70 text-xs mt-3 leading-relaxed">
           {subject.desc}
         </p>
 
-        {/* Class details block */}
-        <div className="flex flex-col gap-2.5 my-4 bg-[#080808]/75 border border-white/5 rounded-xl p-3.5 sm:p-4 text-[11px] font-body shadow-inner">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 sm:gap-4 border-b border-white/5 pb-2.5">
-            <span className="text-white/40 font-medium">Target Audience</span>
-            <span className="text-white/90 font-bold text-left sm:text-right leading-tight max-w-full sm:max-w-[170px]">{subject.audience}</span>
+        {/* Class details tags */}
+        <div className="flex flex-wrap gap-2 my-3">
+          <div className="flex items-center gap-1.5 bg-white/[0.03] border border-white/5 rounded-lg px-2.5 py-1 text-[10px] text-white/80 font-body">
+            <svg className="w-3.5 h-3.5 text-[#f59e0b] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <span className="truncate">{subject.audience}</span>
           </div>
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 sm:gap-4">
-            <span className="text-white/40 font-medium">Mediums Offered</span>
-            <span className="text-white/90 font-bold text-left sm:text-right leading-tight max-w-full sm:max-w-[170px]">{subject.mediums}</span>
+          <div className="flex items-center gap-1.5 bg-white/[0.03] border border-white/5 rounded-lg px-2.5 py-1 text-[10px] text-white/80 font-body">
+            <svg className="w-3.5 h-3.5 text-[#f59e0b] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <span className="truncate">{subject.mediums}</span>
           </div>
         </div>
 
         {/* Syllabus Highlights */}
-        <div className="flex flex-col gap-3 mt-2">
-          <h4 className="font-display font-bold text-[10px] text-white/40 uppercase tracking-wider">
+        <div className="flex flex-col gap-2.5 mt-2">
+          <h4 className="font-display font-bold text-[9px] text-white/40 uppercase tracking-wider">
             Syllabus Highlights
           </h4>
-          <ul className="flex flex-col gap-2.5 text-xs">
+          <ul className="flex flex-col gap-2 text-xs">
             {subject.features.map((f, idx) => (
-              <li key={idx} className="flex gap-2.5 items-start">
-                <div className="w-5 h-5 rounded-md bg-[#f59e0b]/10 border border-[#f59e0b]/20 flex items-center justify-center text-[#f59e0b] shrink-0 mt-0.5 group-hover:bg-[#f59e0b]/20 transition-all">
-                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
+              <li key={idx} className="flex gap-2 items-start">
+                <div className="w-4 h-4 rounded-md bg-[#f59e0b]/10 border border-[#f59e0b]/20 flex items-center justify-center text-[#f59e0b] shrink-0 mt-0.5 group-hover:bg-[#f59e0b]/20 transition-all">
+                  <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <span className="font-body text-white/75 text-[11px] sm:text-xs leading-relaxed">{f}</span>
+                <span className="font-body text-white/75 text-[11px] leading-relaxed">{f}</span>
               </li>
             ))}
           </ul>
@@ -175,7 +174,7 @@ function SubjectCard({ subject }) {
       {/* Bottom Section */}
       <div className="relative z-10">
         {/* Class Materials Included */}
-        <div className="flex flex-wrap gap-1.5 mt-5 border-t border-white/5 pt-4">
+        <div className="flex flex-wrap gap-1.5 mt-4 border-t border-white/5 pt-3">
           {subject.provided.map(p => (
             <span
               key={p}
@@ -214,7 +213,7 @@ function SubjectCard({ subject }) {
                     </svg>
                     <span className="font-body text-[10px] sm:text-[11px] font-semibold text-white/80 group-hover:text-[#f59e0b] transition-colors truncate">{res.title}</span>
                   </div>
-                  <div className="w-5.5 h-5.5 sm:w-6 sm:h-6 rounded-full border border-white/10 flex items-center justify-center shrink-0 group-hover:border-[#f59e0b]/40 group-hover:bg-[#f59e0b]/5 text-white/30 group-hover:text-[#f59e0b] transition-all duration-300 relative z-10">
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border border-white/10 flex items-center justify-center shrink-0 group-hover:border-[#f59e0b]/40 group-hover:bg-[#f59e0b]/5 text-white/30 group-hover:text-[#f59e0b] transition-all duration-300 relative z-10">
                     <svg className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>

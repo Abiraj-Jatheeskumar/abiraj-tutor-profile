@@ -141,7 +141,7 @@ export default function Hero() {
 
             {/* Tiny float overlay card */}
             <div className="absolute -bottom-1 -right-1 sm:-right-4 glass rounded-2xl p-2.5 sm:p-3 flex items-center gap-2 sm:gap-2.5 shadow-[0_8px_20px_rgba(0,0,0,0.4)] border border-[#f59e0b]/35 max-w-[160px] xs:max-w-[190px] sm:max-w-[200px] hover:scale-105 transition-transform duration-300 z-20">
-              <div className="w-6.5 h-6.5 sm:w-7 sm:h-7 rounded-full bg-[#f59e0b]/20 flex items-center justify-center shrink-0">
+              <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#f59e0b]/20 flex items-center justify-center shrink-0">
                 <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#f59e0b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>

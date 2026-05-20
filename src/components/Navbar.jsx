@@ -49,7 +49,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Logo & Brand */}
         <a href="#hero" className="flex items-center gap-2.5 sm:gap-3 group">
-          <div className="w-9.5 h-9.5 sm:w-10 sm:h-10 rounded-full overflow-hidden border border-[#f59e0b]/40 bg-[#121212] flex items-center justify-center shadow-[0_0_12px_rgba(245,158,11,0.25)] group-hover:shadow-[0_0_20px_rgba(245,158,11,0.45)] transition-all duration-300">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden border border-[#f59e0b]/40 bg-[#121212] flex items-center justify-center shadow-[0_0_12px_rgba(245,158,11,0.25)] group-hover:shadow-[0_0_20px_rgba(245,158,11,0.45)] transition-all duration-300">
             <img src="/intro3.png" alt="J. Abiraj" className="w-full h-full object-cover scale-[1.3] origin-top" />
           </div>
           <div className="flex flex-col">
