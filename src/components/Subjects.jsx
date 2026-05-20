@@ -252,7 +252,7 @@ export default function Subjects() {
       {/* Section top accent line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-[#f59e0b]/40 to-transparent" />
 
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div
           ref={headRef}

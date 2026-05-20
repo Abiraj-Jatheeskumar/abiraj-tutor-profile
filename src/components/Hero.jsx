@@ -35,7 +35,7 @@ export default function Hero() {
       </div>
 
       {/* ── Main content (2-Column Grid) ── */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center pt-28 pb-14 sm:pt-36 sm:pb-20 lg:pt-32 lg:pb-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center pt-28 pb-14 sm:pt-36 sm:pb-20 lg:pt-32 lg:pb-20">
         
         {/* Left Column — Copy & Credibility */}
         <div 

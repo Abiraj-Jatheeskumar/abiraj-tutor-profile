@@ -12,7 +12,7 @@ export default function Footer() {
       {/* Top border ambient divider line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#f59e0b]/40 to-transparent" />
 
-      <div className="max-w-5xl mx-auto px-6 py-14">
+      <div className="max-w-7xl mx-auto px-6 py-14">
         <div className="flex flex-col md:flex-row items-center justify-between gap-10">
 
           {/* Brand */}

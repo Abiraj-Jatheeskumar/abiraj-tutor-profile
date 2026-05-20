@@ -46,7 +46,7 @@ export default function Navbar() {
           : 'bg-transparent py-4 sm:py-5'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Logo & Brand */}
         <a href="#hero" className="flex items-center gap-2.5 sm:gap-3 group">
           <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden border border-[#f59e0b]/40 bg-[#121212] flex items-center justify-center shadow-[0_0_12px_rgba(245,158,11,0.25)] group-hover:shadow-[0_0_20px_rgba(245,158,11,0.45)] transition-all duration-300">
