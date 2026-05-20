@@ -15,7 +15,7 @@ export default {
         gold: '#f59e0b',
       },
       fontFamily: {
-        display: ['"Playfair Display"', 'serif'],
+        display: ['"Plus Jakarta Sans"', 'sans-serif'],
         body: ['"Inter"', 'sans-serif'],
       },
       keyframes: {

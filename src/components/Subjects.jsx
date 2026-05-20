@@ -1,11 +1,5 @@
 import { useInView } from '../hooks/useInView'
 
-const CheckIcon = () => (
-  <svg className="w-4 h-4 text-[#f59e0b] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-  </svg>
-)
-
 const ChemistryIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-[#f59e0b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M9 3v8.5L5.5 17A4 4 0 009.354 23h5.292a4 4 0 003.854-5.5L15 11.5V3" />
@@ -29,84 +23,220 @@ const subjects = [
     icon: <ChemistryIcon />,
     title: 'A/L Chemistry',
     badge: 'Tamil Medium',
-    desc: 'Structured A/L Chemistry tuition — from atoms to organic reactions — built around exam success and conceptual clarity.',
+    desc: 'Structured curriculum designed to master physical calculation dynamics, organic synthesis charts, and inorganic analytical methodologies.',
+    audience: 'G.C.E. Advanced Level Science Stream Students',
+    mediums: 'Tamil Medium (Batch & Individual classes)',
     features: [
-      'Full syllabus: Organic, Inorganic & Physical',
-      'Past paper analysis & model answers',
-      'Practical theory & experiment-based learning',
-      'Simplified for deep, lasting understanding',
+      'In-depth Physical Chemistry steps & calculation shortcuts',
+      'Logical maps of Organic Chemistry conversion pathways',
+      'Inorganic Chemistry memory maps & structured notes',
+      'Targeted dissection of Past Papers & Model Papers (20+ years)',
     ],
+    provided: [
+      'Comprehensive Unit Booklets',
+      'Topical Worksheets & Class Assignments',
+      'Simulated Chemistry Mock Examination papers'
+    ],
+    resources: [
+      {
+        title: 'A/L Chem Unit Booklet (Request Info)',
+        link: 'https://wa.me/94776921300?text=Hi%20Abiraj,%20I%20am%20interested%20in%20requesting%20the%20A/L%20Chemistry%20Unit%20Booklets.',
+        primary: true
+      },
+      {
+        title: 'Topical Worksheets & Simulated MCQ Packs',
+        link: 'https://wa.me/94776921300?text=Hi%20Abiraj,%20I%20am%20interested%20in%20requesting%20the%20A/L%20Chemistry%20Worksheets.',
+        primary: false
+      }
+    ]
   },
   {
     num: '02',
     icon: <ICTIcon />,
     title: 'A/L & O/L ICT',
     badge: 'English & Tamil Medium',
-    desc: 'Comprehensive ICT tuition covering both O/L and A/L syllabi — theory, programming, and exam-focused practicals.',
+    desc: 'Comprehensive coverage of logic structures, database theory, systems, data networks, and programming architectures.',
+    audience: 'G.C.E. A/L & O/L Students sitting for ICT',
+    mediums: 'English & Tamil Medium (Batch & Individual classes)',
     features: [
-      'O/L & A/L ICT full syllabus coverage',
-      'Programming: Python, HTML/CSS, databases',
-      'Past paper training with marking schemes',
-      'Instruction in English or Tamil medium',
+      'Hands-on Python programming & logic formulation steps',
+      'Database systems, SQL queries, & ER-diagram tutorials',
+      'System design, data communications, & computer networks',
+      'Practical exam techniques and marking scheme analysis',
     ],
+    provided: [
+      'Digital & Printed study guides & slides',
+      'Practical Code Walkthroughs (Python & SQL scripts)',
+      'Topic-by-topic Exam Question Packs'
+    ],
+    resources: [
+      {
+        title: '10-Yr O/L Lesson Aligned Guide (2015-2024)',
+        link: '/analysis/ict_ol_professional_master_guide_lesson_aligned_2015_2024.html',
+        primary: true
+      },
+      {
+        title: 'O/L ICT Mega Master Guide',
+        link: '/analysis/MEGA_MASTER_GUIDE.html',
+        primary: false
+      }
+    ]
   },
 ]
 
-function SubjectCard({ subject, delay }) {
+const methodologies = [
+  {
+    title: 'Conceptual Deep-Dive',
+    desc: 'Logical explanations, real-world analogies, and visual flowcharts instead of plain rote memorization.'
+  },
+  {
+    title: 'Topical Question Drills',
+    desc: 'Tackling relevant questions directly after class to check for retention and lock down core concepts.'
+  },
+  {
+    title: 'Past-Paper Dissection',
+    desc: 'Analyzing decades of actual papers alongside national evaluation reports to decode examiner expectations.'
+  },
+  {
+    title: 'Constant Evaluation',
+    desc: 'Regular timed mock tests to enhance speed, practice stress-management, and track performance indicators.'
+  }
+]
+
+function SubjectCard({ subject }) {
   const [ref, inView] = useInView()
   return (
     <div
       ref={ref}
-      className="group relative bg-[#1e3a5f]/50 backdrop-blur-sm rounded-3xl p-8 flex flex-col gap-6 overflow-hidden border border-[#f59e0b]/10 hover:border-[#f59e0b]/35 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(245,158,11,0.18)] cursor-default"
-      style={{ opacity: 0, animation: inView ? `fadeInUp 0.75s ease-out ${delay}s forwards` : 'none' }}
+      className="bg-[#121212]/45 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-7 flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.4)] hover:border-[#f59e0b]/35 hover:shadow-[0_20px_60px_rgba(245,158,11,0.06)] transition-all duration-500 group relative overflow-hidden h-full text-left"
+      style={{ opacity: 0, animation: inView ? 'fadeInUp 0.8s ease-out forwards' : 'none' }}
     >
-      {/* Gradient top line */}
-      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#f59e0b] to-transparent opacity-80" />
+      {/* Background soft glows on card hover */}
+      <div className="absolute -right-16 -top-16 w-44 h-44 rounded-full bg-[#f59e0b]/5 opacity-30 blur-[60px] pointer-events-none group-hover:scale-150 group-hover:opacity-75 transition-all duration-700 ease-out" />
+      <div className="absolute -left-20 -bottom-20 w-48 h-48 rounded-full bg-[#f59e0b]/3 opacity-20 blur-[80px] pointer-events-none group-hover:scale-125 transition-all duration-700 ease-out" />
 
-      {/* Large number watermark */}
-      <span className="absolute top-5 right-6 font-display text-8xl font-black text-[#f59e0b]/[0.05] select-none leading-none pointer-events-none">
-        {subject.num}
-      </span>
+      {/* Top Section */}
+      <div className="relative z-10">
+        {/* Header Row */}
+        <div className="flex items-center justify-between gap-3 border-b border-white/5 pb-4">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-xl bg-[#f59e0b]/10 border border-[#f59e0b]/30 shadow-[0_4px_12px_rgba(245,158,11,0.15)] flex items-center justify-center text-[#f59e0b] shrink-0 group-hover:scale-105 transition-transform duration-300">
+              {subject.icon}
+            </div>
+            <div>
+              <h3 className="font-display text-lg sm:text-xl font-bold text-white leading-tight group-hover:text-[#f59e0b] transition-colors">
+                {subject.title}
+              </h3>
+              <p className="font-body text-white/40 text-[10px] mt-0.5 leading-none">Subject Stream Coaching</p>
+            </div>
+          </div>
+          <span className="inline-block w-fit text-[#f59e0b] text-[8px] font-black uppercase tracking-[0.15em] bg-[#f59e0b]/10 border border-[#f59e0b]/30 px-3 py-1.5 rounded-full shrink-0">
+            {subject.badge}
+          </span>
+        </div>
 
-      {/* Icon */}
-      <div className="w-16 h-16 rounded-2xl bg-[#f59e0b]/10 border border-[#f59e0b]/20 flex items-center justify-center group-hover:bg-[#f59e0b]/20 group-hover:scale-110 group-hover:border-[#f59e0b]/40 transition-all duration-300 relative z-10">
-        {subject.icon}
+        {/* Description Tagline */}
+        <p className="font-body text-white/70 text-xs mt-3.5 leading-relaxed">
+          {subject.desc}
+        </p>
+
+        {/* Class details block */}
+        <div className="flex flex-col gap-2.5 my-4 bg-[#080808]/75 border border-white/5 rounded-xl p-4 text-[11px] font-body shadow-inner">
+          <div className="flex justify-between items-start gap-4 border-b border-white/5 pb-2.5">
+            <span className="text-white/40 font-medium">Target Audience</span>
+            <span className="text-white/90 font-bold text-right leading-tight max-w-[170px]">{subject.audience}</span>
+          </div>
+          <div className="flex justify-between items-start gap-4">
+            <span className="text-white/40 font-medium">Mediums Offered</span>
+            <span className="text-white/90 font-bold text-right leading-tight max-w-[170px]">{subject.mediums}</span>
+          </div>
+        </div>
+
+        {/* Syllabus Highlights */}
+        <div className="flex flex-col gap-3 mt-2">
+          <h4 className="font-display font-bold text-[10px] text-white/40 uppercase tracking-wider">
+            Syllabus Highlights
+          </h4>
+          <ul className="flex flex-col gap-2.5 text-xs">
+            {subject.features.map((f, idx) => (
+              <li key={idx} className="flex gap-3 items-start">
+                <div className="w-5 h-5 rounded-md bg-[#f59e0b]/10 border border-[#f59e0b]/20 flex items-center justify-center text-[#f59e0b] shrink-0 mt-0.5 group-hover:bg-[#f59e0b]/20 transition-all">
+                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span className="font-body text-white/75 text-[11px] sm:text-xs leading-relaxed">{f}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
-      {/* Title + badge */}
-      <div className="flex flex-col gap-2.5">
-        <h3 className="font-display text-2xl font-bold text-white">{subject.title}</h3>
-        <span className="self-start bg-[#f59e0b]/12 border border-[#f59e0b]/35 text-[#f59e0b] text-xs font-semibold font-body px-3.5 py-1 rounded-full uppercase tracking-wider">
-          {subject.badge}
-        </span>
+      {/* Bottom Section */}
+      <div className="relative z-10">
+        {/* Class Materials Included */}
+        <div className="flex flex-wrap gap-1.5 mt-5 border-t border-white/5 pt-4">
+          {subject.provided.map(p => (
+            <span
+              key={p}
+              className="font-body text-[9px] text-white/60 border border-white/5 bg-[#121212]/50 px-2.5 py-1 rounded-md hover:border-[#f59e0b]/25 hover:text-white transition-all duration-300"
+            >
+              {p}
+            </span>
+          ))}
+        </div>
+
+        {/* Resources Attachment */}
+        {subject.resources && subject.resources.length > 0 && (
+          <div className="mt-4 p-3.5 rounded-xl bg-gradient-to-r from-[#f59e0b]/[0.02] to-[#f59e0b]/[0.06] border border-[#f59e0b]/15 flex flex-col gap-2.5 shadow-inner animate-border-pulse">
+            <div className="flex items-center gap-2.5">
+              <div className="relative flex h-2 w-2 shrink-0">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#f59e0b] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#f59e0b]"></span>
+              </div>
+              <span className="font-display font-semibold text-[9px] text-[#f59e0b] uppercase tracking-wider">Exclusive Academic Files</span>
+            </div>
+            <div className="flex flex-col gap-2">
+              {subject.resources.map((res, rIdx) => (
+                <a
+                  key={rIdx}
+                  href={res.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-3 rounded-lg bg-[#030303]/60 border border-white/5 hover:border-[#f59e0b]/35 hover:bg-[#030303]/90 hover:shadow-[0_4px_15px_rgba(245,158,11,0.04)] transition-all duration-300 group overflow-hidden relative"
+                >
+                  {/* Continuous background shimmer line to draw eyes */}
+                  <div className="absolute inset-0 w-1/3 h-full bg-gradient-to-r from-transparent via-white/[0.04] to-transparent -translate-x-full animate-shimmer-sweep pointer-events-none" />
+
+                  <div className="flex items-center gap-2.5 truncate relative z-10">
+                    <svg className="w-4 h-4 text-[#f59e0b]/90 group-hover:scale-110 transition-transform shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <span className="font-body text-[11px] font-semibold text-white/80 group-hover:text-[#f59e0b] transition-colors truncate">{res.title}</span>
+                  </div>
+                  <div className="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center shrink-0 group-hover:border-[#f59e0b]/40 group-hover:bg-[#f59e0b]/5 text-white/30 group-hover:text-[#f59e0b] transition-all duration-300 relative z-10">
+                    <svg className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
-
-      {/* Description */}
-      <p className="font-body text-white/55 text-sm leading-relaxed">{subject.desc}</p>
-
-      {/* Feature list */}
-      <ul className="flex flex-col gap-2.5">
-        {subject.features.map(f => (
-          <li key={f} className="flex items-start gap-2.5">
-            <CheckIcon />
-            <span className="font-body text-white/70 text-sm leading-snug">{f}</span>
-          </li>
-        ))}
-      </ul>
-
-      {/* Hover glow */}
-      <div className="absolute -bottom-12 -right-12 w-48 h-48 rounded-full bg-[#f59e0b]/[0.05] blur-3xl group-hover:bg-[#f59e0b]/[0.12] transition-all duration-500 pointer-events-none" />
     </div>
   )
 }
 
 export default function Subjects() {
   const [headRef, headInView] = useInView()
+  const [methodRef, methodInView] = useInView()
 
   return (
-    <section id="subjects" className="relative py-28 bg-[#0a1628] px-6 overflow-hidden">
+    <section id="subjects" className="relative py-28 bg-[#050505] px-6 overflow-hidden">
       {/* Section top accent line */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-[#f59e0b]/50 to-transparent" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-[#f59e0b]/40 to-transparent" />
 
       <div className="max-w-5xl mx-auto">
         {/* Heading */}
@@ -116,22 +246,65 @@ export default function Subjects() {
           style={{ opacity: 0, animation: headInView ? 'fadeInUp 0.8s ease-out forwards' : 'none' }}
         >
           <span className="inline-block font-body text-[#f59e0b] text-xs font-semibold uppercase tracking-[0.25em] mb-3">
-            What I Teach
+            Subjects Offered
           </span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-white">
-            Subjects I <span className="text-gold-gradient">Teach</span>
+            Specialized Academic <span className="text-gold-gradient">Coaching</span>
           </h2>
-          <p className="mt-4 font-body text-white/45 text-base max-w-sm mx-auto">
-            Comprehensive tuition across two core subjects, tailored for exam success
+          <p className="mt-4 font-body text-white/65 text-base max-w-md mx-auto leading-relaxed">
+            Professional guidance across two foundational sciences, designed to build a standard of top results.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
-          {subjects.map((s, i) => (
-            <SubjectCard key={s.num} subject={s} delay={i * 0.15} />
+        {/* Subjects Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch mt-8">
+          {subjects.map((s) => (
+            <SubjectCard key={s.num} subject={s} />
           ))}
         </div>
+
+        {/* Methodology section */}
+        <div className="mt-20 border-t border-white/5 pt-28">
+          <div
+            ref={methodRef}
+            className="text-center mb-16"
+            style={{ opacity: 0, animation: methodInView ? 'fadeInUp 0.8s ease-out forwards' : 'none' }}
+          >
+            <span className="inline-block font-body text-[#f59e0b] text-xs font-semibold uppercase tracking-[0.25em] mb-3">
+              Redefining Tutoring
+            </span>
+            <h3 className="font-display text-3xl md:text-4xl font-bold text-white">
+              My Teaching <span className="text-gold-gradient">Methodology</span>
+            </h3>
+            <p className="mt-3 font-body text-white/65 text-sm max-w-sm mx-auto leading-relaxed">
+              A systematic 4-phase framework engineered to build academic resilience and outstanding test scores.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {methodologies.map((m, idx) => (
+              <div
+                key={idx}
+                className="bg-[#121212]/45 border border-white/5 rounded-2xl p-6 flex flex-col gap-4 hover:border-[#f59e0b]/30 hover:bg-[#121212]/65 hover:shadow-[0_8px_30px_rgba(245,158,11,0.06)] transition-all duration-300 relative group"
+              >
+                {/* Index badge */}
+                <div className="w-10 h-10 rounded-xl bg-[#f59e0b]/8 border border-[#f59e0b]/20 flex items-center justify-center font-display font-black text-[#f59e0b] text-sm group-hover:bg-[#f59e0b]/15 group-hover:scale-105 transition-all duration-300">
+                  {idx + 1}
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <h4 className="font-display font-semibold text-lg text-white group-hover:text-[#f59e0b] transition-colors duration-200">
+                    {m.title}
+                  </h4>
+                  <p className="font-body text-white/65 text-xs leading-relaxed">
+                    {m.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   )
