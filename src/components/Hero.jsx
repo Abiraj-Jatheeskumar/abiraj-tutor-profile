@@ -117,7 +117,7 @@ export default function Hero() {
           <div className="absolute inset-0 rounded-full bg-[#f59e0b]/[0.06] blur-2xl animate-pulse-glow pointer-events-none scale-90" />
           
           {/* Photo Outer Container — Elegant Breathing Frame */}
-          <div className="relative group w-[240px] h-[240px] xs:w-[270px] xs:h-[270px] sm:w-[330px] sm:h-[330px] lg:w-[380px] lg:h-[380px] xl:w-[440px] xl:h-[440px] 2xl:w-[500px] 2xl:h-[500px] rounded-full p-2 sm:p-3 lg:p-4 transition-all duration-500 flex items-center justify-center shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+          <div className="relative group w-[280px] h-[280px] xs:w-[320px] xs:h-[320px] sm:w-[380px] sm:h-[380px] lg:w-[440px] lg:h-[440px] xl:w-[500px] xl:h-[500px] 2xl:w-[560px] 2xl:h-[560px] rounded-full p-2 sm:p-3 lg:p-4 transition-all duration-500 flex items-center justify-center shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
             
             {/* Soft Breathing Glowing Accent Ring */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#f59e0b]/20 to-[#f59e0b]/5 blur-lg animate-pulse-glow group-hover:blur-xl transition-all duration-700 pointer-events-none" />
