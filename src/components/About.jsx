@@ -132,12 +132,12 @@ export default function About() {
           {/* Right Column — Professional Grid Stats */}
           <div 
             ref={statsRef} 
-            className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full"
+            className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full"
           >
             {stats.map(({ value, label, sublabel, icon }, i) => (
               <div
                 key={label}
-                className="group relative bg-[#121212]/45 border border-white/5 rounded-2xl p-5 sm:p-6 flex flex-col gap-3.5 sm:gap-4 hover:border-[#f59e0b]/30 hover:bg-[#121212]/60 transition-all duration-300 overflow-hidden"
+                className="group relative bg-[#121212]/45 border border-white/5 rounded-2xl p-4 sm:p-6 flex flex-row sm:flex-col items-center sm:items-start gap-4 hover:border-[#f59e0b]/30 hover:bg-[#121212]/60 transition-all duration-300 overflow-hidden"
                 style={{
                   opacity: 0,
                   animation: statsInView ? `fadeInUp 0.7s ease-out ${0.08 + i * 0.12}s forwards` : 'none',
@@ -147,14 +147,14 @@ export default function About() {
                 <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#f59e0b]/10 to-transparent group-hover:via-[#f59e0b]/30 transition-all duration-500" />
                 
                 {/* Icon Container */}
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#f59e0b]/8 flex items-center justify-center text-[#f59e0b] group-hover:bg-[#f59e0b]/15 transition-all duration-350 shrink-0">
+                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#f59e0b]/8 flex items-center justify-center text-[#f59e0b] group-hover:bg-[#f59e0b]/15 transition-all duration-350 shrink-0">
                   {icon}
                 </div>
 
-                <div className="flex flex-col">
-                  <div className="font-display text-xl sm:text-2xl font-bold text-[#f59e0b]">{value}</div>
-                  <div className="font-display font-semibold text-white/90 text-xs sm:text-sm mt-1">{label}</div>
-                  <div className="font-body text-white/55 text-[9px] sm:text-[10px] uppercase mt-0.5 tracking-wider">{sublabel}</div>
+                <div className="flex flex-col text-left">
+                  <div className="font-display text-lg sm:text-2xl font-bold text-[#f59e0b] leading-tight">{value}</div>
+                  <div className="font-display font-semibold text-white/90 text-sm mt-0.5 sm:mt-1">{label}</div>
+                  <div className="font-body text-white/55 text-[10px] uppercase mt-0.5 tracking-wider hidden sm:block">{sublabel}</div>
                 </div>
               </div>
             ))}

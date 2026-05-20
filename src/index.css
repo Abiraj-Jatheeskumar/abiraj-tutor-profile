@@ -128,4 +128,12 @@
     -webkit-backdrop-filter: blur(22px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }

@@ -43,14 +43,14 @@ export default function Hero() {
           style={{ opacity: 0, animation: 'fadeInUp 0.8s ease-out 0.1s forwards' }}
         >
           {/* Badge */}
-          <span className="inline-flex items-center gap-2 glass px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[#f59e0b] text-[9px] sm:text-xs font-semibold font-body tracking-wider uppercase">
+          <span className="inline-flex items-center gap-1.5 sm:gap-2 glass px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[#f59e0b] text-[10px] sm:text-xs font-semibold font-body tracking-wider uppercase mb-1 sm:mb-0">
             <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#f59e0b] animate-pulse shrink-0" />
             BSc(Hons) in Computer Science (Reading)
           </span>
 
           {/* Heading */}
-          <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-white">
-            Empowering Futures in <br className="hidden sm:inline" />
+          <h1 className="font-display text-[32px] xs:text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15] sm:leading-tight text-white mt-1 sm:mt-0">
+            Empowering Futures in <br />
             <span className="text-gold-gradient">Chemistry &amp; ICT</span>
           </h1>
 
@@ -116,27 +116,24 @@ export default function Hero() {
           {/* Animated Background Glow behind picture */}
           <div className="absolute inset-0 rounded-full bg-[#f59e0b]/[0.06] blur-2xl animate-pulse-glow pointer-events-none scale-90" />
           
-          {/* Photo Outer Container — Perfect Circular Profile Frame */}
-          <div className="relative group w-[240px] h-[240px] xs:w-[270px] xs:h-[270px] sm:w-[330px] sm:h-[330px] rounded-full border border-[#f59e0b]/30 bg-[#121212]/40 backdrop-blur-md shadow-[0_25px_60px_rgba(0,0,0,0.65)] hover:border-[#f59e0b]/60 transition-all duration-500 flex items-center justify-center p-2 animate-float">
+          {/* Photo Outer Container — Elegant Breathing Frame */}
+          <div className="relative group w-[240px] h-[240px] xs:w-[270px] xs:h-[270px] sm:w-[330px] sm:h-[330px] rounded-full p-2 sm:p-3 transition-all duration-500 flex items-center justify-center shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
             
-            {/* Outer Slow Rotating Clockwise Orbit */}
-            <div className="absolute inset-1 rounded-full border border-dashed border-[#f59e0b]/35 animate-[spin_40s_linear_infinite] pointer-events-none" />
+            {/* Soft Breathing Glowing Accent Ring */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#f59e0b]/20 to-[#f59e0b]/5 blur-lg animate-pulse-glow group-hover:blur-xl transition-all duration-700 pointer-events-none" />
             
-            {/* Inner Counter-Rotating Orbit */}
-            <div className="absolute inset-2.5 rounded-full border border-dotted border-[#f59e0b]/20 animate-[spin_25s_linear_infinite_reverse] pointer-events-none" />
-            
-            {/* Static Outer Border Ring */}
-            <div className="absolute inset-4 rounded-full border border-[#f59e0b]/10 pointer-events-none" />
+            {/* Inner Metallic Frame Base */}
+            <div className="absolute inset-1 sm:inset-1.5 rounded-full border border-[#f59e0b]/20 bg-[#0a0a0a]/60 backdrop-blur-md group-hover:border-[#f59e0b]/40 transition-colors duration-700 pointer-events-none" />
 
             {/* Image mask — Perfect Circle */}
-            <div className="w-full h-full rounded-full overflow-hidden relative z-10 border border-[#f59e0b]/20">
+            <div className="w-full h-full rounded-full overflow-hidden relative z-10 border-[3px] sm:border-[4px] border-[#030303] ring-1 ring-[#f59e0b]/30 shadow-inner group-hover:ring-[#f59e0b]/60 transition-all duration-500">
               <img
                 src="/intro3.png"
                 alt="J. Abiraj Profile"
-                className="w-full h-full object-cover scale-[1.2] origin-top transition-transform duration-750 group-hover:scale-[1.25] filter contrast-[1.04] brightness-[1.02] saturate-[0.95]"
+                className="w-full h-full object-cover scale-[1.15] origin-top transition-transform duration-700 ease-out group-hover:scale-[1.22] filter contrast-[1.02] brightness-[1.02]"
               />
               {/* Soft gradient bottom vignette */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#030303]/65 via-transparent to-transparent opacity-90" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#030303]/80 via-transparent to-transparent opacity-80 pointer-events-none" />
             </div>
 
             {/* Tiny float overlay card */}

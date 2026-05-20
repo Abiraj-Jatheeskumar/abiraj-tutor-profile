@@ -116,10 +116,10 @@ export default function Contact() {
                   <span className="font-body text-white/55 text-[9px] sm:text-[10px] uppercase tracking-wider font-semibold">
                     {contact.label}
                   </span>
-                  <span className="font-display font-semibold text-sm sm:text-lg text-white group-hover:text-[#f59e0b] transition-colors mt-0.5 truncate">
+                  <span className="font-display font-semibold text-[13px] sm:text-lg text-white group-hover:text-[#f59e0b] transition-colors mt-0.5 truncate">
                     {contact.value}
                   </span>
-                  <span className="font-body text-white/60 text-[11px] sm:text-xs mt-0.5 leading-tight">
+                  <span className="font-body text-white/60 text-[10px] sm:text-xs mt-0.5 leading-snug">
                     {contact.note}
                   </span>
                 </div>
@@ -135,7 +135,7 @@ export default function Contact() {
 
           {/* Right Column — Step Guide Card */}
           <div className="lg:col-span-5">
-            <div className="h-full bg-gradient-to-br from-[#121212]/55 to-[#050505]/55 backdrop-blur-sm rounded-3xl p-5 sm:p-8 border border-[#f59e0b]/15 flex flex-col gap-6 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.35)]">
+            <div className="h-full bg-gradient-to-br from-[#121212]/55 to-[#050505]/55 backdrop-blur-sm rounded-3xl p-4 sm:p-8 border border-[#f59e0b]/15 flex flex-col gap-6 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.35)]">
               {/* Internal abstract visual accent */}
               <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-[#f59e0b]/[0.04] blur-2xl pointer-events-none" />
 
@@ -148,17 +148,20 @@ export default function Contact() {
                 Start your structured learning path or arrange dynamic sessions by following these three direct actions:
               </p>
 
-              <div className="flex flex-col gap-5 mt-2">
+              <div className="flex flex-col gap-0 mt-2 relative">
+                {/* Connecting Line behind steps */}
+                <div className="absolute left-[11px] top-4 bottom-8 w-px bg-gradient-to-b from-[#f59e0b]/40 via-[#f59e0b]/10 to-transparent" />
+                
                 {enrollSteps.map((step, idx) => (
-                  <div key={idx} className="flex gap-4 items-start">
-                    <div className="w-6 h-6 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/20 flex items-center justify-center text-[10px] font-bold text-[#f59e0b] font-display shrink-0 mt-0.5">
-                      0{idx + 1}
+                  <div key={idx} className="flex gap-4 items-start relative pb-6 last:pb-0">
+                    <div className="w-6 h-6 rounded-full bg-[#050505] border border-[#f59e0b]/40 flex items-center justify-center text-[10px] font-bold text-[#f59e0b] font-display shrink-0 relative z-10 mt-0.5 shadow-[0_0_12px_rgba(245,158,11,0.25)]">
+                      {idx + 1}
                     </div>
-                    <div className="flex flex-col">
-                      <span className="font-display text-sm font-semibold text-white/95">
+                    <div className="flex flex-col pb-1">
+                      <span className="font-display text-[13px] sm:text-sm font-semibold text-white/95 mt-1 leading-none">
                         {step.title}
                       </span>
-                      <span className="font-body text-white/60 text-[11px] mt-0.5 leading-relaxed">
+                      <span className="font-body text-white/60 text-[11px] mt-1.5 leading-relaxed">
                         {step.desc}
                       </span>
                     </div>

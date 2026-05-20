@@ -39,13 +39,13 @@ const subjects = [
     ],
     resources: [
       {
-        title: 'A/L Chem Unit Booklet (Request Info)',
-        link: 'https://wa.me/94776921300?text=Hi%20Abiraj,%20I%20am%20interested%20in%20requesting%20the%20A/L%20Chemistry%20Unit%20Booklets.',
+        title: 'A/L Chemistry Teachers Guide (Tamil Medium)',
+        link: 'https://nie.lk/pdffiles/tg/tALTG%20Chemistry.pdf',
         primary: true
       },
       {
-        title: 'Topical Worksheets & Simulated MCQ Packs',
-        link: 'https://wa.me/94776921300?text=Hi%20Abiraj,%20I%20am%20interested%20in%20requesting%20the%20A/L%20Chemistry%20Worksheets.',
+        title: 'A/L Chemistry Resource Book Portal',
+        link: 'https://nie.lk/showom3',
         primary: false
       }
     ]
@@ -152,70 +152,85 @@ function SubjectCard({ subject }) {
         </div>
 
         {/* Syllabus Highlights */}
-        <div className="flex flex-col gap-2.5 mt-2">
-          <h4 className="font-display font-bold text-[9px] text-white/40 uppercase tracking-wider">
+        <div className="flex flex-col gap-2.5 mt-2 overflow-hidden">
+          <h4 className="font-display font-bold text-[9px] text-white/40 uppercase tracking-wider px-1">
             Syllabus Highlights
           </h4>
-          <ul className="flex flex-col gap-2 text-xs">
+          <div className="flex overflow-x-auto gap-2.5 pb-2 -mx-2 px-2 scrollbar-hide snap-x">
             {subject.features.map((f, idx) => (
-              <li key={idx} className="flex gap-2 items-start">
-                <div className="w-4 h-4 rounded-md bg-[#f59e0b]/10 border border-[#f59e0b]/20 flex items-center justify-center text-[#f59e0b] shrink-0 mt-0.5 group-hover:bg-[#f59e0b]/20 transition-all">
-                  <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
+              <div key={idx} className="flex flex-col gap-2 shrink-0 w-[170px] sm:w-[190px] bg-[#121212]/50 border border-white/5 rounded-xl p-3 snap-start hover:border-[#f59e0b]/30 hover:bg-[#121212]/80 transition-colors">
+                <div className="w-5 h-5 rounded-md bg-[#f59e0b]/10 border border-[#f59e0b]/20 flex items-center justify-center text-[#f59e0b]">
+                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <span className="font-body text-white/75 text-[11px] leading-relaxed">{f}</span>
-              </li>
+                <span className="font-body text-white/75 text-[11px] leading-snug whitespace-normal">{f}</span>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
 
       {/* Bottom Section */}
       <div className="relative z-10">
         {/* Class Materials Included */}
-        <div className="flex flex-wrap gap-1.5 mt-4 border-t border-white/5 pt-3">
-          {subject.provided.map(p => (
-            <span
-              key={p}
-              className="font-body text-[9px] text-white/60 border border-white/5 bg-[#121212]/50 px-2 py-0.5 rounded-md hover:border-[#f59e0b]/25 hover:text-white transition-all duration-300"
-            >
-              {p}
-            </span>
-          ))}
+        <div className="mt-3 border-t border-white/5 pt-3.5 overflow-hidden">
+          <h4 className="font-display font-bold text-[9px] text-white/40 uppercase tracking-wider mb-2.5 px-1">
+            Materials Provided
+          </h4>
+          <div className="flex overflow-x-auto gap-2 pb-2 -mx-2 px-2 scrollbar-hide snap-x">
+            {subject.provided.map(p => (
+              <div
+                key={p}
+                className="flex items-center gap-2 shrink-0 snap-start bg-[#080808]/80 border border-white/5 px-3 py-1.5 rounded-lg hover:border-[#f59e0b]/30 transition-colors"
+              >
+                <div className="w-1.5 h-1.5 rounded-full bg-[#f59e0b] shadow-[0_0_6px_rgba(245,158,11,0.8)] shrink-0" />
+                <span className="font-body text-[10px] sm:text-[11px] text-white/80 font-medium whitespace-nowrap">{p}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Resources Attachment */}
         {subject.resources && subject.resources.length > 0 && (
-          <div className="mt-4 p-3 rounded-xl bg-gradient-to-r from-[#f59e0b]/[0.02] to-[#f59e0b]/[0.06] border border-[#f59e0b]/15 flex flex-col gap-2.5 shadow-inner animate-border-pulse">
-            <div className="flex items-center gap-2">
+          <div className="mt-4 p-3.5 sm:p-4 rounded-xl bg-[#121212]/40 border border-[#f59e0b]/15 flex flex-col gap-3.5 shadow-[0_4px_20px_rgba(245,158,11,0.03)] animate-border-pulse">
+            <div className="flex items-center gap-2 mb-1">
               <div className="relative flex h-2 w-2 shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#f59e0b] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#f59e0b]"></span>
               </div>
-              <span className="font-display font-semibold text-[9px] text-[#f59e0b] uppercase tracking-wider">Exclusive Academic Files</span>
+              <span className="font-display font-semibold text-[10px] text-[#f59e0b] uppercase tracking-wider">Exclusive Academic Files</span>
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2.5">
               {subject.resources.map((res, rIdx) => (
                 <a
                   key={rIdx}
                   href={res.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between p-2.5 sm:p-3 rounded-lg bg-[#030303]/60 border border-white/5 hover:border-[#f59e0b]/35 hover:bg-[#030303]/90 hover:shadow-[0_4px_15px_rgba(245,158,11,0.04)] transition-all duration-300 group overflow-hidden relative"
+                  className="flex items-center justify-between p-2.5 sm:p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:border-[#f59e0b]/30 hover:bg-[#121212]/90 hover:shadow-[0_8px_20px_rgba(245,158,11,0.06)] transition-all duration-300 group relative overflow-hidden"
                 >
-                  {/* Continuous background shimmer line to draw eyes */}
-                  <div className="absolute inset-0 w-1/3 h-full bg-gradient-to-r from-transparent via-white/[0.04] to-transparent -translate-x-full animate-shimmer-sweep pointer-events-none" />
+                  {/* Subtle shimmer hover effect */}
+                  <div className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/[0.02] to-transparent -translate-x-full group-hover:animate-shimmer-sweep pointer-events-none" />
 
-                  <div className="flex items-center gap-2 truncate relative z-10 mr-2">
-                    <svg className="w-4 h-4 text-[#f59e0b]/90 group-hover:scale-110 transition-transform shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    <span className="font-body text-[10px] sm:text-[11px] font-semibold text-white/80 group-hover:text-[#f59e0b] transition-colors truncate">{res.title}</span>
+                  <div className="flex items-center gap-3.5 truncate relative z-10 mr-2">
+                    {/* Big File Icon Block */}
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-[#f59e0b]/20 to-[#f59e0b]/5 border border-[#f59e0b]/20 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#f59e0b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    {/* File Text Details */}
+                    <div className="flex flex-col text-left truncate">
+                      <span className="font-display font-semibold text-[11px] sm:text-[12px] text-white/95 group-hover:text-[#f59e0b] transition-colors truncate">{res.title}</span>
+                      <span className="font-body text-[9px] text-white/40 tracking-wider uppercase mt-0.5 group-hover:text-white/60 transition-colors">Secured Document • View</span>
+                    </div>
                   </div>
-                  <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border border-white/10 flex items-center justify-center shrink-0 group-hover:border-[#f59e0b]/40 group-hover:bg-[#f59e0b]/5 text-white/30 group-hover:text-[#f59e0b] transition-all duration-300 relative z-10">
-                    <svg className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  
+                  {/* Download/Arrow Action Icon */}
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-[#f59e0b] group-hover:border-[#f59e0b] text-white/40 group-hover:text-[#030303] transition-all duration-300 relative z-10 shadow-lg">
+                    <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 group-hover:translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>
                   </div>
                 </a>
@@ -280,18 +295,18 @@ export default function Subjects() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
             {methodologies.map((m, idx) => (
               <div
                 key={idx}
-                className="bg-[#121212]/45 border border-white/5 rounded-2xl p-5 sm:p-6 flex flex-col gap-3.5 sm:gap-4 hover:border-[#f59e0b]/30 hover:bg-[#121212]/65 hover:shadow-[0_8px_30px_rgba(245,158,11,0.06)] transition-all duration-300 relative group"
+                className="bg-[#121212]/45 border border-white/5 rounded-2xl p-4 sm:p-6 flex flex-row sm:flex-col gap-3.5 sm:gap-4 items-start hover:border-[#f59e0b]/30 hover:bg-[#121212]/65 hover:shadow-[0_8px_30px_rgba(245,158,11,0.06)] transition-all duration-300 relative group"
               >
                 {/* Index badge */}
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#f59e0b]/8 border border-[#f59e0b]/20 flex items-center justify-center font-display font-black text-[#f59e0b] text-xs sm:text-sm group-hover:bg-[#f59e0b]/15 group-hover:scale-105 transition-all duration-300">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#f59e0b]/8 border border-[#f59e0b]/20 flex items-center justify-center font-display font-black text-[#f59e0b] text-sm group-hover:bg-[#f59e0b]/15 group-hover:scale-105 transition-all duration-300 shrink-0">
                   {idx + 1}
                 </div>
 
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-1.5 sm:gap-2">
                   <h4 className="font-display font-semibold text-base sm:text-lg text-white group-hover:text-[#f59e0b] transition-colors duration-200">
                     {m.title}
                   </h4>

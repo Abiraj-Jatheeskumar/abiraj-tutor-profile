@@ -44,16 +44,16 @@ export default function FAQ() {
         {/* Heading */}
         <div
           ref={headRef}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-10 sm:mb-16"
           style={{ opacity: 0, animation: headInView ? 'fadeInUp 0.8s ease-out forwards' : 'none' }}
         >
-          <span className="inline-block font-body text-[#f59e0b] text-xs font-semibold uppercase tracking-[0.25em] mb-2.5">
+          <span className="inline-block font-body text-[#f59e0b] text-[10px] sm:text-xs font-semibold uppercase tracking-[0.25em] mb-2 sm:mb-2.5">
             Common Questions
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+          <h2 className="font-display text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Frequently Asked <span className="text-gold-gradient">Questions</span>
           </h2>
-          <p className="mt-3.5 font-body text-white/65 text-sm sm:text-base max-w-sm mx-auto leading-relaxed">
+          <p className="mt-3 sm:mt-3.5 font-body text-white/65 text-xs sm:text-base max-w-sm mx-auto leading-relaxed">
             Everything you need to know about the class formats, mediums, and lesson materials.
           </p>
         </div>
@@ -61,7 +61,7 @@ export default function FAQ() {
         {/* Accordion List */}
         <div
           ref={listRef}
-          className="flex flex-col gap-4"
+          className="flex flex-col gap-3 sm:gap-4"
           style={{ opacity: 0, animation: listInView ? 'fadeInUp 0.8s ease-out 0.15s forwards' : 'none' }}
         >
           {faqs.map((faq, idx) => {
@@ -76,10 +76,10 @@ export default function FAQ() {
                 {/* Accordion Header Trigger */}
                 <button
                   onClick={() => toggleFAQ(idx)}
-                  className="w-full text-left px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-3 sm:gap-4 font-display font-semibold text-sm sm:text-base md:text-lg text-white group-hover:text-[#f59e0b]/90 transition-colors"
+                  className="w-full text-left px-4 sm:px-6 py-3.5 sm:py-5 flex items-center justify-between gap-3 sm:gap-4 font-display font-semibold text-[13px] sm:text-base md:text-lg text-white group-hover:text-[#f59e0b]/90 transition-colors"
                   aria-expanded={isOpen}
                 >
-                  <span>{faq.question}</span>
+                  <span className="leading-snug pr-2">{faq.question}</span>
                   <span className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0 border border-white/10 group-hover:border-[#f59e0b]/30 transition-all duration-300 bg-[#050505] ${
                     isOpen ? 'border-[#f59e0b]/40 text-[#f59e0b] rotate-180' : 'text-white/65'
                   }`}>
@@ -96,7 +96,7 @@ export default function FAQ() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="font-body text-white/70 text-xs sm:text-sm leading-relaxed border-t border-white/5 pt-3">
+                    <p className="font-body text-white/70 text-[11px] sm:text-sm leading-relaxed border-t border-white/5 pt-3">
                       {faq.answer}
                     </p>
                   </div>
