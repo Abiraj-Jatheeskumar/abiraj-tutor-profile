@@ -248,46 +248,46 @@ export default function Subjects() {
   const [methodRef, methodInView] = useInView()
 
   return (
-    <section id="subjects" className="relative py-16 sm:py-28 bg-[#050505] px-4 sm:px-6 overflow-hidden">
+    <section id="subjects" className="relative py-28 bg-[#050505] px-4 sm:px-6 overflow-hidden">
       {/* Section top accent line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-[#f59e0b]/40 to-transparent" />
 
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         {/* Heading */}
         <div
           ref={headRef}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-16"
           style={{ opacity: 0, animation: headInView ? 'fadeInUp 0.8s ease-out forwards' : 'none' }}
         >
-          <span className="inline-block font-body text-[#f59e0b] text-xs font-semibold uppercase tracking-[0.25em] mb-2.5">
+          <span className="inline-block font-body text-[#f59e0b] text-xs font-semibold uppercase tracking-[0.25em] mb-3">
             Subjects Offered
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-white">
             Specialized Academic <span className="text-gold-gradient">Coaching</span>
           </h2>
-          <p className="mt-3.5 font-body text-white/65 text-sm sm:text-base max-w-md mx-auto leading-relaxed">
+          <p className="mt-4 font-body text-white/65 text-base max-w-md mx-auto leading-relaxed">
             Professional guidance across two foundational sciences, designed to build a standard of top results.
           </p>
         </div>
 
         {/* Subjects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-stretch mt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 items-stretch mt-8">
           {subjects.map((s) => (
             <SubjectCard key={s.num} subject={s} />
           ))}
         </div>
 
         {/* Methodology section */}
-        <div className="mt-16 border-t border-white/5 pt-20 sm:pt-28">
+        <div className="mt-20 border-t border-white/5 pt-28">
           <div
             ref={methodRef}
-            className="text-center mb-12 sm:mb-16"
+            className="text-center mb-16"
             style={{ opacity: 0, animation: methodInView ? 'fadeInUp 0.8s ease-out forwards' : 'none' }}
           >
-            <span className="inline-block font-body text-[#f59e0b] text-xs font-semibold uppercase tracking-[0.25em] mb-2.5">
+            <span className="inline-block font-body text-[#f59e0b] text-xs font-semibold uppercase tracking-[0.25em] mb-3">
               Redefining Tutoring
             </span>
-            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+            <h3 className="font-display text-3xl md:text-4xl font-bold text-white">
               My Teaching <span className="text-gold-gradient">Methodology</span>
             </h3>
             <p className="mt-3 font-body text-white/65 text-sm max-w-sm mx-auto leading-relaxed">
@@ -295,19 +295,19 @@ export default function Subjects() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
             {methodologies.map((m, idx) => (
               <div
                 key={idx}
-                className="bg-[#121212]/45 border border-white/5 rounded-2xl p-4 sm:p-6 flex flex-row sm:flex-col gap-3.5 sm:gap-4 items-start hover:border-[#f59e0b]/30 hover:bg-[#121212]/65 hover:shadow-[0_8px_30px_rgba(245,158,11,0.06)] transition-all duration-300 relative group"
+                className="bg-[#121212]/45 border border-white/5 rounded-2xl p-6 flex flex-col gap-4 hover:border-[#f59e0b]/30 hover:bg-[#121212]/65 hover:shadow-[0_8px_30px_rgba(245,158,11,0.06)] transition-all duration-300 relative group"
               >
                 {/* Index badge */}
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#f59e0b]/8 border border-[#f59e0b]/20 flex items-center justify-center font-display font-black text-[#f59e0b] text-sm group-hover:bg-[#f59e0b]/15 group-hover:scale-105 transition-all duration-300 shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-[#f59e0b]/8 border border-[#f59e0b]/20 flex items-center justify-center font-display font-black text-[#f59e0b] text-sm group-hover:bg-[#f59e0b]/15 group-hover:scale-105 transition-all duration-300">
                   {idx + 1}
                 </div>
 
-                <div className="flex flex-col gap-1.5 sm:gap-2">
-                  <h4 className="font-display font-semibold text-base sm:text-lg text-white group-hover:text-[#f59e0b] transition-colors duration-200">
+                <div className="flex flex-col gap-2">
+                  <h4 className="font-display font-semibold text-lg text-white group-hover:text-[#f59e0b] transition-colors duration-200">
                     {m.title}
                   </h4>
                   <p className="font-body text-white/65 text-xs leading-relaxed">

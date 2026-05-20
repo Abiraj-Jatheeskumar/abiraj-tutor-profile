@@ -49,14 +49,14 @@ export default function Hero() {
           </span>
 
           {/* Heading */}
-          <h1 className="font-display text-[32px] xs:text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15] sm:leading-tight text-white mt-1 sm:mt-0">
+          <h1 className="font-display text-[32px] xs:text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.15] sm:leading-tight text-white mt-1 sm:mt-0">
             Empowering Futures in <br />
             <span className="text-gold-gradient">Chemistry &amp; ICT</span>
           </h1>
 
           {/* Subtitle */}
           <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
-            <p className="font-display text-xl sm:text-2xl font-bold text-white/95">
+            <p className="font-display text-xl sm:text-2xl xl:text-3xl font-bold text-white/95">
               J. Abiraj
             </p>
             <span className="font-body text-[10px] sm:text-xs font-bold text-[#f59e0b] bg-[#f59e0b]/12 border border-[#f59e0b]/35 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-md uppercase tracking-wider">
@@ -65,7 +65,7 @@ export default function Hero() {
           </div>
 
           {/* Tagline */}
-          <p className="font-body text-white/60 text-sm sm:text-base md:text-lg max-w-xl leading-relaxed">
+          <p className="font-body text-white/60 text-sm sm:text-base md:text-lg xl:text-xl max-w-xl xl:max-w-2xl leading-relaxed">
             Simplifying complex concepts, breaking down syllabus barriers, and boosting examination confidence with tailored methods in English &amp; Tamil mediums.
           </p>
 
@@ -117,7 +117,7 @@ export default function Hero() {
           <div className="absolute inset-0 rounded-full bg-[#f59e0b]/[0.06] blur-2xl animate-pulse-glow pointer-events-none scale-90" />
           
           {/* Photo Outer Container — Elegant Breathing Frame */}
-          <div className="relative group w-[240px] h-[240px] xs:w-[270px] xs:h-[270px] sm:w-[330px] sm:h-[330px] rounded-full p-2 sm:p-3 transition-all duration-500 flex items-center justify-center shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+          <div className="relative group w-[240px] h-[240px] xs:w-[270px] xs:h-[270px] sm:w-[330px] sm:h-[330px] lg:w-[380px] lg:h-[380px] xl:w-[440px] xl:h-[440px] 2xl:w-[500px] 2xl:h-[500px] rounded-full p-2 sm:p-3 lg:p-4 transition-all duration-500 flex items-center justify-center shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
             
             {/* Soft Breathing Glowing Accent Ring */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#f59e0b]/20 to-[#f59e0b]/5 blur-lg animate-pulse-glow group-hover:blur-xl transition-all duration-700 pointer-events-none" />
