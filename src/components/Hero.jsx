@@ -35,45 +35,45 @@ export default function Hero() {
       </div>
 
       {/* ── Main content (2-Column Grid) ── */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-32 pb-20">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center pt-28 pb-14 sm:pt-36 sm:pb-20 lg:pt-32 lg:pb-20">
         
         {/* Left Column — Copy & Credibility */}
         <div 
-          className="lg:col-span-7 flex flex-col items-start text-left gap-6"
+          className="lg:col-span-7 flex flex-col items-start text-left gap-5 sm:gap-6"
           style={{ opacity: 0, animation: 'fadeInUp 0.8s ease-out 0.1s forwards' }}
         >
           {/* Badge */}
-          <span className="inline-flex items-center gap-2.5 glass px-4 py-2 rounded-full text-[#f59e0b] text-[10px] sm:text-xs font-semibold font-body tracking-wider uppercase">
-            <span className="w-2 h-2 rounded-full bg-[#f59e0b] animate-pulse shrink-0" />
+          <span className="inline-flex items-center gap-2 glass px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[#f59e0b] text-[9px] sm:text-xs font-semibold font-body tracking-wider uppercase">
+            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#f59e0b] animate-pulse shrink-0" />
             BSc(Hons) in Computer Science (Reading)
           </span>
 
           {/* Heading */}
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-white">
+          <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-white">
             Empowering Futures in <br className="hidden sm:inline" />
             <span className="text-gold-gradient">Chemistry &amp; ICT</span>
           </h1>
 
           {/* Subtitle */}
-          <div className="flex flex-wrap items-center gap-3">
-            <p className="font-display text-2xl font-bold text-white/95">
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+            <p className="font-display text-xl sm:text-2xl font-bold text-white/95">
               J. Abiraj
             </p>
-            <span className="font-body text-xs font-bold text-[#f59e0b] bg-[#f59e0b]/12 border border-[#f59e0b]/35 px-3 py-1 rounded-md uppercase tracking-wider">
+            <span className="font-body text-[10px] sm:text-xs font-bold text-[#f59e0b] bg-[#f59e0b]/12 border border-[#f59e0b]/35 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-md uppercase tracking-wider">
               Professional Tutor
             </span>
           </div>
 
           {/* Tagline */}
-          <p className="font-body text-white/60 text-base md:text-lg max-w-xl leading-relaxed">
+          <p className="font-body text-white/60 text-sm sm:text-base md:text-lg max-w-xl leading-relaxed">
             Simplifying complex concepts, breaking down syllabus barriers, and boosting examination confidence with tailored methods in English &amp; Tamil mediums.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-2">
+          <div className="flex flex-col sm:flex-row gap-3.5 sm:gap-4 w-full sm:w-auto mt-2">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2.5 bg-[#f59e0b] text-[#030303] font-body font-bold text-sm px-8 py-4 rounded-full shadow-[0_4px_20px_rgba(245,158,11,0.4)] hover:shadow-[0_4px_30px_rgba(245,158,11,0.6)] hover:bg-amber-400 hover:scale-105 transition-all duration-300 w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2.5 bg-[#f59e0b] text-[#030303] font-body font-bold text-sm px-6 sm:px-8 py-3.5 sm:py-4 rounded-full shadow-[0_4px_20px_rgba(245,158,11,0.4)] hover:shadow-[0_4px_30px_rgba(245,158,11,0.6)] hover:bg-amber-400 hover:scale-105 transition-all duration-300 w-full sm:w-auto"
             >
               <svg className="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -82,7 +82,7 @@ export default function Hero() {
             </a>
             <a
               href="#subjects"
-              className="inline-flex items-center justify-center gap-2.5 glass text-[#f59e0b] font-body font-bold text-sm px-8 py-4 rounded-full hover:bg-[#f59e0b]/20 hover:scale-105 transition-all duration-300 w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2.5 glass text-[#f59e0b] font-body font-bold text-sm px-6 sm:px-8 py-3.5 sm:py-4 rounded-full hover:bg-[#f59e0b]/20 hover:scale-105 transition-all duration-300 w-full sm:w-auto"
             >
               View Subjects
               <svg className="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -92,32 +92,32 @@ export default function Hero() {
           </div>
 
           {/* Quick Info Badges */}
-          <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-6 border-t border-white/5 w-full max-w-lg mt-2">
+          <div className="grid grid-cols-3 gap-2 sm:gap-6 pt-5 sm:pt-6 border-t border-white/5 w-full max-w-lg mt-2 text-left">
             <div>
-              <div className="font-display text-lg sm:text-xl font-bold text-[#f59e0b]">BSc(Hons)</div>
-              <div className="font-body text-white/60 text-[11px] uppercase tracking-wider mt-0.5">CS Reading</div>
+              <div className="font-display text-base sm:text-lg md:text-xl font-bold text-[#f59e0b]">BSc(Hons)</div>
+              <div className="font-body text-white/60 text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-wider mt-1.5 leading-tight">CS Reading</div>
             </div>
             <div>
-              <div className="font-display text-lg sm:text-xl font-bold text-[#f59e0b]">2 Subjects</div>
-              <div className="font-body text-white/60 text-[11px] uppercase tracking-wider mt-0.5">Chemistry &amp; ICT</div>
+              <div className="font-display text-base sm:text-lg md:text-xl font-bold text-[#f59e0b]">2 Subjects</div>
+              <div className="font-body text-white/60 text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-wider mt-1.5 leading-tight">Chemistry &amp; ICT</div>
             </div>
             <div>
-              <div className="font-display text-lg sm:text-xl font-bold text-[#f59e0b]">Dual Medium</div>
-              <div className="font-body text-white/60 text-[11px] uppercase tracking-wider mt-0.5">English &amp; Tamil</div>
+              <div className="font-display text-base sm:text-lg md:text-xl font-bold text-[#f59e0b]">Dual Medium</div>
+              <div className="font-body text-white/60 text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-wider mt-1.5 leading-tight">English &amp; Tamil</div>
             </div>
           </div>
         </div>
 
         {/* Right Column — Premium Image Frame */}
         <div 
-          className="lg:col-span-5 flex justify-center relative"
+          className="lg:col-span-5 flex justify-center relative mt-8 lg:mt-0"
           style={{ opacity: 0, animation: 'fadeInUp 0.8s ease-out 0.35s forwards' }}
         >
           {/* Animated Background Glow behind picture */}
           <div className="absolute inset-0 rounded-full bg-[#f59e0b]/[0.06] blur-2xl animate-pulse-glow pointer-events-none scale-90" />
           
           {/* Photo Outer Container — Perfect Circular Profile Frame */}
-          <div className="relative group w-[270px] h-[270px] sm:w-[330px] sm:h-[330px] rounded-full border border-[#f59e0b]/30 bg-[#121212]/40 backdrop-blur-md shadow-[0_25px_60px_rgba(0,0,0,0.65)] hover:border-[#f59e0b]/60 transition-all duration-500 flex items-center justify-center p-2 animate-float">
+          <div className="relative group w-[240px] h-[240px] xs:w-[270px] xs:h-[270px] sm:w-[330px] sm:h-[330px] rounded-full border border-[#f59e0b]/30 bg-[#121212]/40 backdrop-blur-md shadow-[0_25px_60px_rgba(0,0,0,0.65)] hover:border-[#f59e0b]/60 transition-all duration-500 flex items-center justify-center p-2 animate-float">
             
             {/* Outer Slow Rotating Clockwise Orbit */}
             <div className="absolute inset-1 rounded-full border border-dashed border-[#f59e0b]/35 animate-[spin_40s_linear_infinite] pointer-events-none" />
@@ -140,13 +140,13 @@ export default function Hero() {
             </div>
 
             {/* Tiny float overlay card */}
-            <div className="absolute -bottom-2 -right-2 sm:-right-4 glass rounded-2xl p-3 flex items-center gap-2.5 shadow-[0_8px_20px_rgba(0,0,0,0.4)] border border-[#f59e0b]/35 max-w-[190px] sm:max-w-[200px] hover:scale-105 transition-transform duration-300 z-20">
-              <div className="w-7 h-7 rounded-full bg-[#f59e0b]/20 flex items-center justify-center shrink-0">
-                <svg className="w-4 h-4 text-[#f59e0b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <div className="absolute -bottom-1 -right-1 sm:-right-4 glass rounded-2xl p-2.5 sm:p-3 flex items-center gap-2 sm:gap-2.5 shadow-[0_8px_20px_rgba(0,0,0,0.4)] border border-[#f59e0b]/35 max-w-[160px] xs:max-w-[190px] sm:max-w-[200px] hover:scale-105 transition-transform duration-300 z-20">
+              <div className="w-6.5 h-6.5 sm:w-7 sm:h-7 rounded-full bg-[#f59e0b]/20 flex items-center justify-center shrink-0">
+                <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#f59e0b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <span className="font-body text-[10px] sm:text-xs font-semibold text-white/90 leading-tight">
+              <span className="font-body text-[9px] sm:text-xs font-semibold text-white/90 leading-tight">
                 Exam Focused Lessons &amp; Materials
               </span>
             </div>

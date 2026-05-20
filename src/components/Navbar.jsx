@@ -42,21 +42,21 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'glass-dark py-3.5 shadow-[0_10px_30px_rgba(0,0,0,0.5)]'
-          : 'bg-transparent py-5'
+          ? 'glass-dark py-3 shadow-[0_10px_30px_rgba(0,0,0,0.5)]'
+          : 'bg-transparent py-4 sm:py-5'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Logo & Brand */}
-        <a href="#hero" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-full overflow-hidden border border-[#f59e0b]/40 bg-[#121212] flex items-center justify-center shadow-[0_0_12px_rgba(245,158,11,0.25)] group-hover:shadow-[0_0_20px_rgba(245,158,11,0.45)] transition-all duration-300">
+        <a href="#hero" className="flex items-center gap-2.5 sm:gap-3 group">
+          <div className="w-9.5 h-9.5 sm:w-10 sm:h-10 rounded-full overflow-hidden border border-[#f59e0b]/40 bg-[#121212] flex items-center justify-center shadow-[0_0_12px_rgba(245,158,11,0.25)] group-hover:shadow-[0_0_20px_rgba(245,158,11,0.45)] transition-all duration-300">
             <img src="/intro3.png" alt="J. Abiraj" className="w-full h-full object-cover scale-[1.3] origin-top" />
           </div>
           <div className="flex flex-col">
-            <span className="font-display font-bold text-white text-base tracking-tight leading-none group-hover:text-[#f59e0b] transition-colors duration-200">
+            <span className="font-display font-bold text-white text-sm sm:text-base tracking-tight leading-none group-hover:text-[#f59e0b] transition-colors duration-200">
               J. Abiraj
             </span>
-            <span className="text-[#f59e0b]/75 text-[10px] font-body font-semibold tracking-wider uppercase mt-0.5">
+            <span className="text-[#f59e0b]/75 text-[9px] sm:text-[10px] font-body font-semibold tracking-wider uppercase mt-0.5">
               Professional Tutor
             </span>
           </div>
@@ -111,7 +111,7 @@ export default function Navbar() {
 
       {/* Elegant Floating Glass Menu Popover */}
       <div
-        className={`md:hidden absolute top-[76px] right-6 w-64 glass-dark border border-[#f59e0b]/25 rounded-2xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.6)] transition-all duration-300 origin-top-right z-50 ${
+        className={`md:hidden absolute top-[70px] right-4 xs:right-6 w-[calc(100vw-32px)] xs:w-64 glass-dark border border-[#f59e0b]/25 rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.6)] transition-all duration-300 origin-top-right z-50 ${
           menuOpen
             ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto'
             : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'

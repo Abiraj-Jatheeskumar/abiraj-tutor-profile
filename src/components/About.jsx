@@ -68,7 +68,7 @@ export default function About() {
   const [statsRef, statsInView] = useInView()
 
   return (
-    <section id="about" className="relative py-28 bg-[#000000] px-6 overflow-hidden">
+    <section id="about" className="relative py-16 sm:py-28 bg-[#000000] px-4 sm:px-6 overflow-hidden">
       {/* Background radial highlights */}
       <div className="absolute top-0 right-0 w-[550px] h-[550px] rounded-full bg-[#f59e0b]/[0.03] blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[420px] h-[420px] rounded-full bg-[#f59e0b]/[0.02] blur-[100px] pointer-events-none" />
@@ -78,19 +78,19 @@ export default function About() {
         {/* Heading */}
         <div
           ref={headRef}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-20"
           style={{ opacity: 0, animation: headInView ? 'fadeInUp 0.8s ease-out forwards' : 'none' }}
         >
-          <span className="inline-block font-body text-[#f59e0b] text-xs font-semibold uppercase tracking-[0.25em] mb-3">
+          <span className="inline-block font-body text-[#f59e0b] text-xs font-semibold uppercase tracking-[0.25em] mb-2.5">
             Tutor Profile
           </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-white">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Academic Credentials &amp; <span className="text-gold-gradient">Bio</span>
           </h2>
         </div>
 
         {/* 2-Column Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
 
           {/* Left Column — Biography & Checklist */}
           <div
@@ -99,18 +99,18 @@ export default function About() {
             style={{ opacity: 0, animation: bioInView ? 'fadeInUp 0.8s ease-out 0.1s forwards' : 'none' }}
           >
             {/* Visual quotes background */}
-            <span className="font-display text-[120px] leading-[0.75] text-[#f59e0b]/8 font-black select-none absolute -left-12 -top-10 pointer-events-none" aria-hidden>
+            <span className="font-display text-[90px] sm:text-[120px] leading-[0.75] text-[#f59e0b]/8 font-black select-none absolute -left-4 sm:-left-12 -top-8 sm:-top-10 pointer-events-none" aria-hidden>
               “
             </span>
             
-            <div className="flex flex-col gap-5 relative z-10">
-              <h3 className="font-display text-2xl font-bold text-white">
+            <div className="flex flex-col gap-4 sm:gap-5 relative z-10">
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-white">
                 Bridging Technology Logic with Science Pedagogy
               </h3>
-              <p className="font-body text-white/80 text-base leading-relaxed">
+              <p className="font-body text-white/80 text-sm sm:text-base leading-relaxed">
                 As a dedicated educator reading for a <span className="text-[#f59e0b] font-semibold">BSc(Hons) in Computer Science</span>, I bring logical analysis and structured thinking into Chemistry and ICT tuition. My focus is on converting complex syllabi into digestible pieces.
               </p>
-              <p className="font-body text-white/60 text-sm leading-relaxed">
+              <p className="font-body text-white/60 text-xs sm:text-sm leading-relaxed">
                 Whether mastering organic chemistry path charts or coding python scripts, I ensure my students comprehend the fundamental structures behind the curriculum rather than relying on plain memorization.
               </p>
             </div>
@@ -118,7 +118,7 @@ export default function About() {
             {/* Highlights Checklist */}
             <div className="flex flex-col gap-4 mt-4 border-t border-white/5 pt-6">
               {highlights.map(h => (
-                <div key={h.title} className="flex gap-4 items-start">
+                <div key={h.title} className="flex gap-3 sm:gap-4 items-start">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#f59e0b] shrink-0 mt-2" />
                   <div className="flex flex-col">
                     <span className="font-display text-sm font-semibold text-white/95">{h.title}</span>
@@ -137,7 +137,7 @@ export default function About() {
             {stats.map(({ value, label, sublabel, icon }, i) => (
               <div
                 key={label}
-                className="group relative bg-[#121212]/45 border border-white/5 rounded-2xl p-6 flex flex-col gap-4 hover:border-[#f59e0b]/30 hover:bg-[#121212]/60 transition-all duration-300 overflow-hidden"
+                className="group relative bg-[#121212]/45 border border-white/5 rounded-2xl p-5 sm:p-6 flex flex-col gap-3.5 sm:gap-4 hover:border-[#f59e0b]/30 hover:bg-[#121212]/60 transition-all duration-300 overflow-hidden"
                 style={{
                   opacity: 0,
                   animation: statsInView ? `fadeInUp 0.7s ease-out ${0.08 + i * 0.12}s forwards` : 'none',
@@ -147,14 +147,14 @@ export default function About() {
                 <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#f59e0b]/10 to-transparent group-hover:via-[#f59e0b]/30 transition-all duration-500" />
                 
                 {/* Icon Container */}
-                <div className="w-11 h-11 rounded-xl bg-[#f59e0b]/8 flex items-center justify-center text-[#f59e0b] group-hover:bg-[#f59e0b]/15 transition-all duration-350 shrink-0">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#f59e0b]/8 flex items-center justify-center text-[#f59e0b] group-hover:bg-[#f59e0b]/15 transition-all duration-350 shrink-0">
                   {icon}
                 </div>
 
                 <div className="flex flex-col">
-                  <div className="font-display text-2xl font-bold text-[#f59e0b]">{value}</div>
-                  <div className="font-display font-semibold text-white/90 text-sm mt-1">{label}</div>
-                  <div className="font-body text-white/55 text-[10px] uppercase mt-0.5 tracking-wider">{sublabel}</div>
+                  <div className="font-display text-xl sm:text-2xl font-bold text-[#f59e0b]">{value}</div>
+                  <div className="font-display font-semibold text-white/90 text-xs sm:text-sm mt-1">{label}</div>
+                  <div className="font-body text-white/55 text-[9px] sm:text-[10px] uppercase mt-0.5 tracking-wider">{sublabel}</div>
                 </div>
               </div>
             ))}

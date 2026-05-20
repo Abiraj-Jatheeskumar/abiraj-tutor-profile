@@ -34,7 +34,7 @@ export default function FAQ() {
   }
 
   return (
-    <section id="faq" className="relative py-28 bg-[#050505] px-6 overflow-hidden">
+    <section id="faq" className="relative py-16 sm:py-28 bg-[#050505] px-4 sm:px-6 overflow-hidden">
       {/* Background visual accents */}
       <div className="absolute top-1/2 right-[5%] -translate-y-1/2 w-[350px] h-[350px] rounded-full bg-[#f59e0b]/[0.02] blur-[90px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-px h-24 bg-gradient-to-t from-[#f59e0b]/40 to-transparent" />
@@ -44,16 +44,16 @@ export default function FAQ() {
         {/* Heading */}
         <div
           ref={headRef}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           style={{ opacity: 0, animation: headInView ? 'fadeInUp 0.8s ease-out forwards' : 'none' }}
         >
-          <span className="inline-block font-body text-[#f59e0b] text-xs font-semibold uppercase tracking-[0.25em] mb-3">
+          <span className="inline-block font-body text-[#f59e0b] text-xs font-semibold uppercase tracking-[0.25em] mb-2.5">
             Common Questions
           </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-white">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Frequently Asked <span className="text-gold-gradient">Questions</span>
           </h2>
-          <p className="mt-4 font-body text-white/65 text-base max-w-sm mx-auto leading-relaxed">
+          <p className="mt-3.5 font-body text-white/65 text-sm sm:text-base max-w-sm mx-auto leading-relaxed">
             Everything you need to know about the class formats, mediums, and lesson materials.
           </p>
         </div>
@@ -76,14 +76,14 @@ export default function FAQ() {
                 {/* Accordion Header Trigger */}
                 <button
                   onClick={() => toggleFAQ(idx)}
-                  className="w-full text-left px-4 sm:px-6 py-5 flex items-center justify-between gap-4 font-display font-semibold text-base md:text-lg text-white group-hover:text-[#f59e0b]/90 transition-colors"
+                  className="w-full text-left px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-3 sm:gap-4 font-display font-semibold text-sm sm:text-base md:text-lg text-white group-hover:text-[#f59e0b]/90 transition-colors"
                   aria-expanded={isOpen}
                 >
                   <span>{faq.question}</span>
-                  <span className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 border border-white/10 group-hover:border-[#f59e0b]/30 transition-all duration-300 bg-[#050505] ${
+                  <span className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0 border border-white/10 group-hover:border-[#f59e0b]/30 transition-all duration-300 bg-[#050505] ${
                     isOpen ? 'border-[#f59e0b]/40 text-[#f59e0b] rotate-180' : 'text-white/65'
                   }`}>
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
                   </span>
@@ -92,11 +92,11 @@ export default function FAQ() {
                 {/* Accordion Content wrapper (Grid Transition for smooth height animation) */}
                 <div
                   className={`grid transition-all duration-300 ease-in-out px-4 sm:px-6 ${
-                    isOpen ? 'grid-rows-[1fr] opacity-100 pb-5' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
+                    isOpen ? 'grid-rows-[1fr] opacity-100 pb-4 sm:pb-5' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="font-body text-white/70 text-sm leading-relaxed border-t border-white/5 pt-3">
+                    <p className="font-body text-white/70 text-xs sm:text-sm leading-relaxed border-t border-white/5 pt-3">
                       {faq.answer}
                     </p>
                   </div>

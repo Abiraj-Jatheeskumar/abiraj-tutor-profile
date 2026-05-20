@@ -68,7 +68,7 @@ export default function Contact() {
   const [gridRef, gridInView] = useInView()
 
   return (
-    <section id="contact" className="relative py-28 bg-[#000000] px-6 overflow-hidden">
+    <section id="contact" className="relative py-16 sm:py-28 bg-[#000000] px-4 sm:px-6 overflow-hidden">
       {/* Background soft lighting */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] rounded-full bg-[#f59e0b]/[0.04] blur-[110px] pointer-events-none" />
 
@@ -77,16 +77,16 @@ export default function Contact() {
         {/* Heading */}
         <div
           ref={headRef}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-20"
           style={{ opacity: 0, animation: headInView ? 'fadeInUp 0.8s ease-out forwards' : 'none' }}
         >
-          <span className="inline-block font-body text-[#f59e0b] text-xs font-semibold uppercase tracking-[0.25em] mb-3">
+          <span className="inline-block font-body text-[#f59e0b] text-xs font-semibold uppercase tracking-[0.25em] mb-2.5">
             Get Started
           </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-white">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Secure Your <span className="text-gold-gradient">Session</span>
           </h2>
-          <p className="mt-4 font-body text-white/50 text-base max-w-sm mx-auto leading-relaxed">
+          <p className="mt-3.5 font-body text-white/50 text-sm sm:text-base max-w-sm mx-auto leading-relaxed">
             Ready to start learning? Reach out through your preferred channel or follow the steps to register.
           </p>
         </div>
@@ -94,7 +94,7 @@ export default function Contact() {
         {/* Contact Split layout */}
         <div
           ref={gridRef}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch"
           style={{ opacity: 0, animation: gridInView ? 'fadeInUp 0.8s ease-out 0.15s forwards' : 'none' }}
         >
           {/* Left Column — Contact link cards */}
@@ -105,21 +105,21 @@ export default function Contact() {
                 href={contact.href}
                 target={contact.href.startsWith('http') ? '_blank' : undefined}
                 rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="flex items-center gap-3.5 sm:gap-5 bg-[#121212]/45 border border-white/5 rounded-2xl p-4 sm:p-5 hover:border-[#f59e0b]/35 hover:bg-[#121212]/65 hover:shadow-[0_6px_25px_rgba(245,158,11,0.06)] transition-all duration-300 group"
+                className="flex items-center gap-3 sm:gap-5 bg-[#121212]/45 border border-white/5 rounded-2xl p-3.5 sm:p-5 hover:border-[#f59e0b]/35 hover:bg-[#121212]/65 hover:shadow-[0_6px_25px_rgba(245,158,11,0.06)] transition-all duration-300 group"
               >
                 {/* Icon wrapper */}
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${contact.iconBg} ${contact.iconColor} group-hover:scale-105 transition-transform duration-300`}>
+                <div className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shrink-0 ${contact.iconBg} ${contact.iconColor} group-hover:scale-105 transition-transform duration-300`}>
                   {contact.icon}
                 </div>
                 {/* Labels */}
-                <div className="flex flex-col">
-                  <span className="font-body text-white/55 text-[10px] uppercase tracking-wider font-semibold">
+                <div className="flex flex-col min-w-0">
+                  <span className="font-body text-white/55 text-[9px] sm:text-[10px] uppercase tracking-wider font-semibold">
                     {contact.label}
                   </span>
-                  <span className="font-display font-semibold text-base sm:text-lg text-white group-hover:text-[#f59e0b] transition-colors mt-0.5">
+                  <span className="font-display font-semibold text-sm sm:text-lg text-white group-hover:text-[#f59e0b] transition-colors mt-0.5 truncate">
                     {contact.value}
                   </span>
-                  <span className="font-body text-white/60 text-xs mt-0.5 leading-tight">
+                  <span className="font-body text-white/60 text-[11px] sm:text-xs mt-0.5 leading-tight">
                     {contact.note}
                   </span>
                 </div>
@@ -139,8 +139,8 @@ export default function Contact() {
               {/* Internal abstract visual accent */}
               <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-[#f59e0b]/[0.04] blur-2xl pointer-events-none" />
 
-              <h3 className="font-display text-xl font-bold text-white flex items-center gap-3">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#f59e0b] animate-ping" />
+              <h3 className="font-display text-lg sm:text-xl font-bold text-white flex items-center gap-2.5">
+                <span className="w-2 h-2 rounded-full bg-[#f59e0b] animate-ping" />
                 How to Register
               </h3>
               
@@ -170,7 +170,7 @@ export default function Contact() {
                 href="https://wa.me/94776921300"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-auto w-full bg-[#f59e0b] text-[#030303] font-body font-bold text-sm py-4 rounded-xl text-center hover:bg-amber-400 hover:scale-[1.02] hover:shadow-[0_6px_20px_rgba(245,158,11,0.35)] transition-all duration-300"
+                className="mt-6 lg:mt-auto w-full bg-[#f59e0b] text-[#030303] font-body font-bold text-sm py-3.5 rounded-xl text-center hover:bg-amber-400 hover:scale-[1.02] hover:shadow-[0_6px_20px_rgba(245,158,11,0.35)] transition-all duration-300"
               >
                 Inquire on WhatsApp
               </a>
