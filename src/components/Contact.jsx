@@ -72,7 +72,7 @@ export default function Contact() {
       {/* Background soft lighting */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] rounded-full bg-[#f59e0b]/[0.04] blur-[110px] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         
         {/* Heading */}
         <div
