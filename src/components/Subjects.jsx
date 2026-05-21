@@ -71,13 +71,13 @@ const subjects = [
     ],
     resources: [
       {
-        title: '10-Yr O/L Lesson Aligned Guide (2015-2024)',
-        link: '/analysis/ict_ol_professional_master_guide_lesson_aligned_2015_2024.html',
+        title: 'O/L ICT Classroom Slides & Notes',
+        link: '/analysis/Classroom_Slides.html',
         primary: true
       },
       {
-        title: 'O/L ICT Mega Master Guide',
-        link: '/analysis/MEGA_MASTER_GUIDE.html',
+        title: 'Student Quick Reference Guide',
+        link: '/analysis/Student_Quick_Reference.html',
         primary: false
       }
     ]
@@ -108,7 +108,7 @@ function SubjectCard({ subject }) {
   return (
     <div
       ref={ref}
-      className="bg-[#121212]/45 backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-6 flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.4)] hover:border-[#f59e0b]/35 hover:shadow-[0_20px_60px_rgba(245,158,11,0.06)] transition-all duration-500 group relative overflow-hidden h-full text-left"
+      className="bg-[#121212]/45 backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-6 flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.4)] hover:border-[#f59e0b]/35 hover:shadow-[0_20px_60px_rgba(245,158,11,0.06)] active:scale-[0.98] active:border-[#f59e0b]/25 active:bg-[#121212]/60 transition-all duration-300 group relative overflow-hidden h-full text-left"
       style={{ opacity: 0, animation: inView ? 'fadeInUp 0.8s ease-out forwards' : 'none' }}
     >
       {/* Background soft glows on card hover */}
@@ -156,17 +156,31 @@ function SubjectCard({ subject }) {
           <h4 className="font-display font-bold text-[9px] text-white/40 uppercase tracking-wider px-1">
             Syllabus Highlights
           </h4>
-          <div className="flex overflow-x-auto gap-2.5 pb-2 -mx-2 px-2 scrollbar-hide snap-x">
-            {subject.features.map((f, idx) => (
-              <div key={idx} className="flex flex-col gap-2 shrink-0 w-[170px] sm:w-[190px] bg-[#121212]/50 border border-white/5 rounded-xl p-3 snap-start hover:border-[#f59e0b]/30 hover:bg-[#121212]/80 transition-colors">
-                <div className="w-5 h-5 rounded-md bg-[#f59e0b]/10 border border-[#f59e0b]/20 flex items-center justify-center text-[#f59e0b]">
-                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
+          <div className="relative w-full overflow-hidden mask-gradient-x py-1">
+            <div className="flex gap-2.5 w-max animate-marquee-slow hover:[animation-play-state:paused]">
+              {/* First set */}
+              {subject.features.map((f, idx) => (
+                <div key={`f1-${idx}`} className="flex flex-col gap-2 shrink-0 w-[170px] sm:w-[190px] bg-[#121212]/50 border border-white/5 rounded-xl p-3 hover:border-[#f59e0b]/30 hover:bg-[#121212]/80 transition-colors">
+                  <div className="w-5 h-5 rounded-md bg-[#f59e0b]/10 border border-[#f59e0b]/20 flex items-center justify-center text-[#f59e0b]">
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="font-body text-white/75 text-[11px] leading-snug whitespace-normal">{f}</span>
                 </div>
-                <span className="font-body text-white/75 text-[11px] leading-snug whitespace-normal">{f}</span>
-              </div>
-            ))}
+              ))}
+              {/* Duplicate set */}
+              {subject.features.map((f, idx) => (
+                <div key={`f2-${idx}`} className="flex flex-col gap-2 shrink-0 w-[170px] sm:w-[190px] bg-[#121212]/50 border border-white/5 rounded-xl p-3 hover:border-[#f59e0b]/30 hover:bg-[#121212]/80 transition-colors">
+                  <div className="w-5 h-5 rounded-md bg-[#f59e0b]/10 border border-[#f59e0b]/20 flex items-center justify-center text-[#f59e0b]">
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="font-body text-white/75 text-[11px] leading-snug whitespace-normal">{f}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -178,16 +192,29 @@ function SubjectCard({ subject }) {
           <h4 className="font-display font-bold text-[9px] text-white/40 uppercase tracking-wider mb-2.5 px-1">
             Materials Provided
           </h4>
-          <div className="flex overflow-x-auto gap-2 pb-2 -mx-2 px-2 scrollbar-hide snap-x">
-            {subject.provided.map(p => (
-              <div
-                key={p}
-                className="flex items-center gap-2 shrink-0 snap-start bg-[#080808]/80 border border-white/5 px-3 py-1.5 rounded-lg hover:border-[#f59e0b]/30 transition-colors"
-              >
-                <div className="w-1.5 h-1.5 rounded-full bg-[#f59e0b] shadow-[0_0_6px_rgba(245,158,11,0.8)] shrink-0" />
-                <span className="font-body text-[10px] sm:text-[11px] text-white/80 font-medium whitespace-nowrap">{p}</span>
-              </div>
-            ))}
+          <div className="relative w-full overflow-hidden mask-gradient-x py-1">
+            <div className="flex gap-2 w-max animate-marquee-fast hover:[animation-play-state:paused]">
+              {/* First set */}
+              {subject.provided.map((p, idx) => (
+                <div
+                  key={`p1-${idx}`}
+                  className="flex items-center gap-2 shrink-0 bg-[#080808]/80 border border-white/5 px-3 py-1.5 rounded-lg hover:border-[#f59e0b]/30 transition-colors"
+                >
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#f59e0b] shadow-[0_0_6px_rgba(245,158,11,0.8)] shrink-0" />
+                  <span className="font-body text-[10px] sm:text-[11px] text-white/80 font-medium whitespace-nowrap">{p}</span>
+                </div>
+              ))}
+              {/* Duplicate set */}
+              {subject.provided.map((p, idx) => (
+                <div
+                  key={`p2-${idx}`}
+                  className="flex items-center gap-2 shrink-0 bg-[#080808]/80 border border-white/5 px-3 py-1.5 rounded-lg hover:border-[#f59e0b]/30 transition-colors"
+                >
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#f59e0b] shadow-[0_0_6px_rgba(245,158,11,0.8)] shrink-0" />
+                  <span className="font-body text-[10px] sm:text-[11px] text-white/80 font-medium whitespace-nowrap">{p}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -226,7 +253,7 @@ function SubjectCard({ subject }) {
                       <span className="font-body text-[9px] text-white/40 tracking-wider uppercase mt-0.5 group-hover:text-white/60 transition-colors">Secured Document • View</span>
                     </div>
                   </div>
-                  
+
                   {/* Download/Arrow Action Icon */}
                   <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-[#f59e0b] group-hover:border-[#f59e0b] text-white/40 group-hover:text-[#030303] transition-all duration-300 relative z-10 shadow-lg">
                     <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 group-hover:translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -249,8 +276,6 @@ export default function Subjects() {
 
   return (
     <section id="subjects" className="relative py-28 bg-[#050505] px-4 sm:px-6 overflow-hidden">
-      {/* Section top accent line */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-[#f59e0b]/40 to-transparent" />
 
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         {/* Heading */}
@@ -295,24 +320,36 @@ export default function Subjects() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8 mt-12">
             {methodologies.map((m, idx) => (
               <div
                 key={idx}
-                className="bg-[#121212]/45 border border-white/5 rounded-2xl p-6 flex flex-col gap-4 hover:border-[#f59e0b]/30 hover:bg-[#121212]/65 hover:shadow-[0_8px_30px_rgba(245,158,11,0.06)] transition-all duration-300 relative group"
+                className="h-full"
+                style={{
+                  opacity: 0,
+                  animation: methodInView ? 'fadeInUp 0.8s ease-out forwards' : 'none',
+                  animationDelay: methodInView ? `${0.2 + idx * 0.15}s` : 'none'
+                }}
               >
-                {/* Index badge */}
-                <div className="w-10 h-10 rounded-xl bg-[#f59e0b]/8 border border-[#f59e0b]/20 flex items-center justify-center font-display font-black text-[#f59e0b] text-sm group-hover:bg-[#f59e0b]/15 group-hover:scale-105 transition-all duration-300">
-                  {idx + 1}
-                </div>
+                <div
+                  className="bg-[#121212]/40 backdrop-blur-md border border-white/[0.08] sm:border-white/[0.05] hover:border-[#f59e0b]/40 rounded-2xl p-6 sm:p-7 flex flex-col gap-5 hover:shadow-[0_20px_50px_rgba(245,158,11,0.08)] hover:-translate-y-1.5 active:scale-[0.98] active:border-[#f59e0b]/30 active:bg-[#121212]/50 transition-all duration-300 relative group overflow-hidden h-full text-left"
+                >
+                  {/* Background glow accent */}
+                  <div className="absolute -right-8 -top-8 w-24 h-24 rounded-full bg-[#f59e0b]/[0.04] sm:bg-[#f59e0b]/[0.02] opacity-40 blur-2xl pointer-events-none group-hover:scale-150 group-hover:bg-[#f59e0b]/[0.08] group-hover:opacity-75 transition-all duration-500 ease-out" />
 
-                <div className="flex flex-col gap-2">
-                  <h4 className="font-display font-semibold text-lg text-white group-hover:text-[#f59e0b] transition-colors duration-200">
-                    {m.title}
-                  </h4>
-                  <p className="font-body text-white/65 text-xs leading-relaxed">
-                    {m.desc}
-                  </p>
+                  {/* Step Number Badge */}
+                  <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#f59e0b]/10 to-[#f59e0b]/[0.02] border border-[#f59e0b]/25 flex items-center justify-center font-display font-bold text-[#f59e0b] text-base group-hover:border-[#f59e0b]/50 group-hover:bg-[#f59e0b]/15 group-hover:scale-110 transition-all duration-300 shadow-[0_4px_12px_rgba(245,158,11,0.08)] group-hover:shadow-[0_4px_20px_rgba(245,158,11,0.25)] shrink-0">
+                    0{idx + 1}
+                  </div>
+
+                  <div className="flex flex-col gap-2 relative z-10">
+                    <h4 className="font-display font-bold text-lg text-white group-hover:text-[#f59e0b] transition-colors duration-300 leading-snug">
+                      {m.title}
+                    </h4>
+                    <p className="font-body text-white/60 text-xs sm:text-[13px] leading-relaxed mt-1">
+                      {m.desc}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}

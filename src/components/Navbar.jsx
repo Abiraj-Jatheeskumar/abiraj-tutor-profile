@@ -46,9 +46,9 @@ export default function Navbar() {
           : 'bg-transparent py-4 sm:py-5'
       }`}
     >
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between relative">
         {/* Logo & Brand */}
-        <a href="#hero" className="flex items-center gap-2.5 sm:gap-3 group">
+        <a href="#hero" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
           <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden border border-[#f59e0b]/40 bg-[#121212] flex items-center justify-center shadow-[0_0_12px_rgba(245,158,11,0.25)] group-hover:shadow-[0_0_20px_rgba(245,158,11,0.45)] transition-all duration-300">
             <img src="/intro3.png" alt="J. Abiraj" className="w-full h-full object-cover scale-[1.3] origin-top" />
           </div>
@@ -62,8 +62,8 @@ export default function Navbar() {
           </div>
         </a>
 
-        {/* Desktop Links */}
-        <nav className="hidden md:flex items-center gap-8">
+        {/* Desktop Links (Centered) */}
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8 absolute left-1/2 -translate-x-1/2">
           {navLinks.map(({ label, href, id }) => {
             const isActive = activeSection === id
             return (
@@ -83,30 +83,34 @@ export default function Navbar() {
               </a>
             )
           })}
+        </nav>
+
+        {/* Desktop CTA & Mobile Hamburger wrapper */}
+        <div className="flex items-center gap-4 shrink-0">
           <a
             href="#contact"
-            className="bg-[#f59e0b] text-[#030303] font-body font-bold text-sm px-5 py-2.5 rounded-full shadow-[0_4px_16px_rgba(245,158,11,0.3)] hover:shadow-[0_4px_24px_rgba(245,158,11,0.5)] hover:bg-amber-400 hover:scale-105 transition-all duration-300"
+            className="hidden md:inline-block bg-[#f59e0b] text-[#030303] font-body font-bold text-sm px-5 py-2.5 rounded-full shadow-[0_4px_16px_rgba(245,158,11,0.3)] hover:shadow-[0_4px_24px_rgba(245,158,11,0.5)] hover:bg-amber-400 hover:scale-105 transition-all duration-300"
           >
             Book a Session
           </a>
-        </nav>
 
-        {/* Mobile Hamburger */}
-        <button
-          className="md:hidden p-2 text-white/80 hover:text-white transition-colors"
-          onClick={() => setMenuOpen(v => !v)}
-          aria-label="Toggle navigation menu"
-        >
-          {menuOpen ? (
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
-        </button>
+          {/* Mobile Hamburger */}
+          <button
+            className="md:hidden p-2 text-white/80 hover:text-white transition-colors"
+            onClick={() => setMenuOpen(v => !v)}
+            aria-label="Toggle navigation menu"
+          >
+            {menuOpen ? (
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Elegant Floating Glass Menu Popover */}

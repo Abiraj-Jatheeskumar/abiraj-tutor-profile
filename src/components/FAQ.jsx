@@ -40,7 +40,7 @@ export default function FAQ() {
       <div className="absolute bottom-0 right-1/4 w-px h-24 bg-gradient-to-t from-[#f59e0b]/40 to-transparent" />
 
       <div className="max-w-4xl mx-auto relative z-10">
-        
+
         {/* Heading */}
         <div
           ref={headRef}
@@ -69,20 +69,27 @@ export default function FAQ() {
             return (
               <div
                 key={idx}
-                className={`group border border-white/5 rounded-2xl transition-all duration-300 bg-[#121212]/45 hover:bg-[#121212]/65 ${
-                  isOpen ? 'border-[#f59e0b]/35 shadow-[0_8px_30px_rgba(245,158,11,0.06)]' : 'hover:border-white/10'
-                }`}
+                className={`group relative border border-white/5 rounded-2xl transition-all duration-350 bg-[#121212]/35 hover:bg-[#121212]/60 hover:-translate-y-0.5 ${isOpen ? 'border-[#f59e0b]/35 shadow-[0_12px_45px_rgba(245,158,11,0.07)] bg-[#121212]/60' : 'hover:border-white/10'
+                  }`}
               >
+                {/* Animated vertical accent bar on the left */}
+                <div className={`absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-[#f59e0b] to-amber-600 rounded-l-2xl transition-all duration-350 ${isOpen ? 'opacity-100 h-full' : 'opacity-0 h-0 group-hover:opacity-40 group-hover:h-[50%]'}`} />
+
                 {/* Accordion Header Trigger */}
                 <button
                   onClick={() => toggleFAQ(idx)}
-                  className="w-full text-left px-4 sm:px-6 py-3.5 sm:py-5 flex items-center justify-between gap-3 sm:gap-4 font-display font-semibold text-[13px] sm:text-base md:text-lg text-white group-hover:text-[#f59e0b]/90 transition-colors"
+                  className="w-full text-left px-5 sm:px-6 py-4.5 sm:py-5 flex items-center justify-between gap-4 font-display font-semibold text-[13px] sm:text-base md:text-lg text-white group-hover:text-[#f59e0b] transition-colors relative z-10"
                   aria-expanded={isOpen}
                 >
-                  <span className="leading-snug pr-2">{faq.question}</span>
-                  <span className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0 border border-white/10 group-hover:border-[#f59e0b]/30 transition-all duration-300 bg-[#050505] ${
-                    isOpen ? 'border-[#f59e0b]/40 text-[#f59e0b] rotate-180' : 'text-white/65'
-                  }`}>
+                  <div className="flex gap-3.5 sm:gap-5 items-start">
+                    {/* Index Number Indicator */}
+                    <span className={`font-display font-bold text-xs sm:text-sm tracking-wider mt-0.5 sm:mt-1 transition-colors duration-300 ${isOpen ? 'text-[#f59e0b]' : 'text-white/25 group-hover:text-white/50'}`}>
+                      {String(idx + 1).padStart(2, '0')}
+                    </span>
+                    <span className="leading-snug pr-2">{faq.question}</span>
+                  </div>
+                  <span className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 border transition-all duration-350 bg-[#050505] ${isOpen ? 'border-[#f59e0b]/40 text-[#f59e0b] bg-[#f59e0b]/8 rotate-180 shadow-[0_0_12px_rgba(245,158,11,0.2)]' : 'border-white/10 text-white/50 group-hover:text-[#f59e0b] group-hover:border-[#f59e0b]/35'
+                    }`}>
                     <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
@@ -91,12 +98,11 @@ export default function FAQ() {
 
                 {/* Accordion Content wrapper (Grid Transition for smooth height animation) */}
                 <div
-                  className={`grid transition-all duration-300 ease-in-out px-4 sm:px-6 ${
-                    isOpen ? 'grid-rows-[1fr] opacity-100 pb-4 sm:pb-5' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
-                  }`}
+                  className={`grid transition-all duration-300 ease-in-out px-5 sm:px-6 ${isOpen ? 'grid-rows-[1fr] opacity-100 pb-4.5 sm:pb-6' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
+                    }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="font-body text-white/70 text-[11px] sm:text-sm leading-relaxed border-t border-white/5 pt-3">
+                    <p className="font-body text-white/70 text-[11px] sm:text-sm leading-relaxed border-t border-white/5 pt-4 pl-7 sm:pl-9">
                       {faq.answer}
                     </p>
                   </div>

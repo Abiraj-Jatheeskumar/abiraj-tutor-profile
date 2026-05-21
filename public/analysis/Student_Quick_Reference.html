@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>O/L ICT - Student Quick Reference Card | By J. Abiraj</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #ffffff;
+    color: #2c3e50;
+    padding: 20px;
+  }
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+  }
+
+  /* COVER PAGE */
+  .cover {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    min-height: 600px;
+    padding: 50px 30px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+  .cover-icon { font-size: 4em; position: relative; z-index: 2; }
+  .cover h1 {
+    font-size: 2.8em;
+    margin: 15px 0 10px 0;
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  }
+  .cover .cover-subtitle {
+    font-size: 1.2em;
+    opacity: 0.95;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 25px;
+  }
+  .cover .cover-line {
+    width: 150px;
+    height: 3px;
+    background: white;
+    margin: 20px auto;
+    opacity: 0.6;
+    position: relative;
+    z-index: 2;
+  }
+  .cover .cover-author {
+    background: rgba(255,255,255,0.15);
+    padding: 25px 35px;
+    border-radius: 12px;
+    margin: 30px auto;
+    max-width: 400px;
+    border: 2px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 2;
+  }
+  .cover-author .author-label {
+    font-size: 0.85em;
+    letter-spacing: 3px;
+    opacity: 0.85;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .cover-author .author-name {
+    font-size: 2.2em;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  .cover-author .author-role {
+    font-size: 0.95em;
+    opacity: 0.9;
+    margin-top: 5px;
+    font-style: italic;
+  }
+  .cover-tagline {
+    font-size: 1em;
+    opacity: 0.9;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* GRID LAYOUT */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  /* CARDS */
+  .card {
+    background: white;
+    border: 2px solid #ecf0f1;
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .card-header {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin: -18px -18px 12px -18px;
+    border-radius: 8px 8px 0 0;
+  }
+  .grade-10-header { background: linear-gradient(90deg, #11998e, #38ef7d); }
+  .grade-11-header { background: linear-gradient(90deg, #f12711, #f5af19); }
+  .tips-header { background: linear-gradient(90deg, #667eea, #764ba2); }
+
+  .card ul, .card ol {
+    padding-left: 22px;
+    font-size: 0.95em;
+  }
+  .card li {
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+
+  /* MUST KNOW BOX */
+  .must-know {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+  .must-know h3 { margin-bottom: 12px; }
+  .must-know ul { padding-left: 22px; }
+  .must-know li { margin-bottom: 5px; }
+
+  /* FORMULA BOX */
+  .formula-box {
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 12px 18px;
+    margin: 10px 0;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95em;
+  }
+
+  /* QUICK TIPS */
+  .quick-tips {
+    background: #fff8dc;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 2px dashed #f39c12;
+    margin: 15px 0;
+  }
+  .quick-tips h4 { color: #d35400; margin-bottom: 10px; }
+  .quick-tips li { margin-bottom: 5px; font-size: 0.95em; }
+
+  /* EXAM SECTION */
+  .exam-info {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+  .exam-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 12px;
+  }
+  .exam-card {
+    background: rgba(255,255,255,0.2);
+    padding: 15px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+  }
+
+  /* TABLES */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 0.9em;
+  }
+  th {
+    background: #34495e;
+    color: white;
+    padding: 8px;
+    text-align: left;
+  }
+  td {
+    padding: 8px;
+    border-bottom: 1px solid #ecf0f1;
+  }
+  tr:nth-child(even) { background: #f8f9fa; }
+
+  /* CHAPTER NUMBER BADGE */
+  .ch-num {
+    display: inline-block;
+    background: white;
+    color: #2c3e50;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    font-weight: bold;
+    margin-right: 8px;
+    font-size: 0.85em;
+  }
+
+  /* PAGE FOOTER */
+  .page-footer {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: center;
+  }
+  .footer-name-big {
+    font-size: 1.6em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+  }
+  .footer-role {
+    font-size: 0.95em;
+    opacity: 0.9;
+    font-style: italic;
+    margin-bottom: 12px;
+  }
+  .footer-divider {
+    width: 80px;
+    height: 2px;
+    background: rgba(255,255,255,0.5);
+    margin: 12px auto;
+  }
+  .footer-text {
+    font-size: 0.9em;
+    opacity: 0.95;
+    margin-top: 10px;
+  }
+  .footer-copyright {
+    font-size: 0.8em;
+    opacity: 0.8;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+
+  /* MINI FOOTER (between sections) */
+  .mini-footer {
+    text-align: center;
+    color: #95a5a6;
+    font-size: 0.8em;
+    padding: 8px 0;
+    font-style: italic;
+    margin-top: 5px;
+  }
+
+  /* PRINT */
+  @media print {
+    body { padding: 0; }
+    .page { max-width: 100%; }
+    .card { page-break-inside: avoid; }
+    .cover {
+      background: #1e3c72 !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page-footer {
+      background: #1e3c72 !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- COVER PAGE -->
+  <div class="cover">
+    <div>
+      <div class="cover-icon">📘</div>
+      <h1>O/L ICT</h1>
+      <div class="cover-subtitle">Student Quick Reference Guide</div>
+      <div class="cover-line"></div>
+      <div style="position: relative; z-index: 2;">
+        Complete Syllabus Map • Grade 10 &amp; 11<br>
+        Must-Know Topics • Formulas • Tips
+      </div>
+    </div>
+
+    <div class="cover-author">
+      <div class="author-label">✦ Prepared By ✦</div>
+      <div class="author-name">J. ABIRAJ</div>
+      <div class="author-role">ICT Teacher</div>
+    </div>
+
+    <div class="cover-tagline">
+      🎯 Study Smart • Practice Daily • Score High
+    </div>
+  </div>
+
+  <!-- SYLLABUS OVERVIEW -->
+  <div class="two-col">
+
+    <!-- GRADE 10 -->
+    <div class="card">
+      <div class="card-header grade-10-header">📗 GRADE 10 - 9 Chapters</div>
+      <ul style="list-style: none; padding: 0;">
+        <li><span class="ch-num" style="background: #11998e; color: white;">1</span> Introduction to ICT</li>
+        <li><span class="ch-num" style="background: #11998e; color: white;">2</span> Fundamentals of Computer System</li>
+        <li><span class="ch-num" style="background: #11998e; color: white;">3</span> Data Representation Methods</li>
+        <li><span class="ch-num" style="background: #11998e; color: white;">4</span> Logic Gates &amp; Boolean Functions</li>
+        <li><span class="ch-num" style="background: #11998e; color: white;">5</span> Operating Systems</li>
+        <li><span class="ch-num" style="background: #11998e; color: white;">6</span> Word Processing</li>
+        <li><span class="ch-num" style="background: #11998e; color: white;">7</span> Electronic Spreadsheet</li>
+        <li><span class="ch-num" style="background: #11998e; color: white;">8</span> Electronic Presentations</li>
+        <li><span class="ch-num" style="background: #11998e; color: white;">9</span> Database</li>
+      </ul>
+    </div>
+
+    <!-- GRADE 11 -->
+    <div class="card">
+      <div class="card-header grade-11-header">📕 GRADE 11 - 6 Chapters</div>
+      <ul style="list-style: none; padding: 0;">
+        <li><span class="ch-num" style="background: #f12711; color: white;">1</span> Programming</li>
+        <li><span class="ch-num" style="background: #f12711; color: white;">2</span> System Development Life Cycle</li>
+        <li><span class="ch-num" style="background: #f12711; color: white;">3</span> Internet &amp; Electronic Mail</li>
+        <li><span class="ch-num" style="background: #f12711; color: white;">4</span> Use of Multimedia</li>
+        <li><span class="ch-num" style="background: #f12711; color: white;">5</span> Web Designing Using Multimedia</li>
+        <li><span class="ch-num" style="background: #f12711; color: white;">6</span> ICT &amp; Society</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="mini-footer">— J. Abiraj • Quick Reference Guide —</div>
+
+  <!-- EXAM STRUCTURE -->
+  <div class="exam-info">
+    <h3>📝 Exam Structure</h3>
+    <div class="exam-grid">
+      <div class="exam-card">
+        <strong>Paper I (MCQ)</strong><br>
+        • 40 Questions × 1 mark<br>
+        • 1 hour duration<br>
+        • Mixed Grade 10 &amp; 11
+      </div>
+      <div class="exam-card">
+        <strong>Paper II (Structured)</strong><br>
+        • Q1 compulsory (20 marks)<br>
+        • Choose 4 from Q2-Q7 (10 each)<br>
+        • 2-3 hours duration
+      </div>
+    </div>
+  </div>
+
+  <!-- MUST KNOW TOPICS -->
+  <div class="must-know">
+    <h3>🎯 TOP 10 MUST-KNOW TOPICS (Appears EVERY Year!)</h3>
+    <ul>
+      <li>✅ Binary ↔ Decimal ↔ Octal ↔ Hexadecimal conversions</li>
+      <li>✅ Logic Gates (AND, OR, NOT, NAND, NOR) &amp; Truth Tables</li>
+      <li>✅ Database - Primary Key, Foreign Key, Composite Key</li>
+      <li>✅ HTML Tags (table, ul, ol, img, a, h1-h6)</li>
+      <li>✅ Spreadsheet Formulas with $ absolute reference</li>
+      <li>✅ Pseudocode WHILE / FOR / IF-ELSE loops</li>
+      <li>✅ SDLC Phases in correct order</li>
+      <li>✅ Computer ports (USB, HDMI, VGA, RJ45)</li>
+      <li>✅ Word Processing icons (Bold, Italic, Subscript)</li>
+      <li>✅ Network topologies (Star, Bus, Ring, Mesh)</li>
+    </ul>
+  </div>
+
+  <div class="mini-footer">— J. Abiraj • Quick Reference Guide —</div>
+
+  <!-- IMPORTANT FORMULAS -->
+  <div class="card">
+    <div class="card-header tips-header">💡 Important Formulas &amp; Shortcuts</div>
+
+    <h4 style="margin-top: 10px;">Number Conversions:</h4>
+    <div class="formula-box">
+      Binary → Decimal: Multiply each bit by 2^position<br>
+      Decimal → Binary: Keep dividing by 2, take remainders<br>
+      Binary → Octal: Group into 3 bits from right<br>
+      Binary → Hex: Group into 4 bits from right
+    </div>
+
+    <h4>Spreadsheet $ Reference:</h4>
+    <div class="formula-box">
+      A1   = Both column &amp; row change when copied<br>
+      $A1  = Column fixed, row changes<br>
+      A$1  = Column changes, row fixed<br>
+      $A$1 = Both fixed (absolute reference)
+    </div>
+
+    <h4>Logic Gates:</h4>
+    <div class="formula-box">
+      AND: Output 1 only if ALL inputs are 1<br>
+      OR:  Output 1 if ANY input is 1<br>
+      NOT: Reverses the input<br>
+      NAND: NOT(AND) - Opposite of AND<br>
+      NOR:  NOT(OR) - Opposite of OR
+    </div>
+
+    <h4>HTML Common Tags:</h4>
+    <div class="formula-box">
+      &lt;ol&gt; ordered list  •  &lt;ul&gt; unordered list  •  &lt;li&gt; list item<br>
+      &lt;table&gt; • &lt;tr&gt; row • &lt;th&gt; header • &lt;td&gt; data<br>
+      &lt;a href=""&gt; hyperlink • &lt;img src=""&gt; image<br>
+      &lt;h1&gt; to &lt;h6&gt; headings • &lt;p&gt; paragraph
+    </div>
+  </div>
+
+  <!-- SDLC PHASES -->
+  <div class="card">
+    <div class="card-header tips-header">🔄 SDLC - 6 Phases (Memorize Order!)</div>
+    <table>
+      <tr><th>#</th><th>Phase</th><th>Activity</th></tr>
+      <tr><td>1</td><td>Requirements Identification</td><td>Interviews, observations, prototypes</td></tr>
+      <tr><td>2</td><td>Design of Solution</td><td>System design, database design</td></tr>
+      <tr><td>3</td><td>Coding / Implementation</td><td>Writing the actual program</td></tr>
+      <tr><td>4</td><td>Testing</td><td>Unit → Integration → System → Acceptance</td></tr>
+      <tr><td>5</td><td>Deployment</td><td>Direct / Parallel / Phased / Pilot</td></tr>
+      <tr><td>6</td><td>Maintenance</td><td>Fixing bugs, adding features</td></tr>
+    </table>
+  </div>
+
+  <!-- COMMON MISTAKES -->
+  <div class="quick-tips">
+    <h4>⚠️ Common Mistakes to AVOID</h4>
+    <ul>
+      <li>❌ Don't forget $ symbol in absolute cell references</li>
+      <li>❌ Don't confuse Primary Key with Foreign Key</li>
+      <li>❌ Don't forget closing HTML tags (&lt;/p&gt;, &lt;/table&gt;)</li>
+      <li>❌ Don't mix up Direct vs Parallel deployment</li>
+      <li>❌ Don't write Pascal code with case errors (begin, end, var)</li>
+      <li>❌ Don't forget &lt;tr&gt; before each table row</li>
+      <li>❌ Don't ignore the difference between RAM &amp; ROM</li>
+    </ul>
+  </div>
+
+  <!-- DATA TYPES -->
+  <div class="card">
+    <div class="card-header tips-header">🗄️ Database Data Types</div>
+    <table>
+      <tr><th>Data Type</th><th>Used For</th><th>Example</th></tr>
+      <tr><td>Text / String</td><td>Names, addresses</td><td>"Saman Perera"</td></tr>
+      <tr><td>Number / Integer</td><td>Quantities, counts</td><td>150</td></tr>
+      <tr><td>Currency</td><td>Money values</td><td>Rs. 500.00</td></tr>
+      <tr><td>Date</td><td>Dates</td><td>2025-12-31</td></tr>
+      <tr><td>Boolean</td><td>True/False</td><td>True</td></tr>
+    </table>
+  </div>
+
+  <!-- LAST MINUTE TIPS -->
+  <div class="card">
+    <div class="card-header tips-header">⏰ Last-Minute Exam Tips</div>
+    <ol>
+      <li><strong>Read all 7 structured questions first</strong>, then choose your best 4</li>
+      <li><strong>Q1 is compulsory</strong> - manage time well (20 marks)</li>
+      <li><strong>Show working</strong> for number conversions - partial marks!</li>
+      <li><strong>Draw clear truth tables</strong> with column headers</li>
+      <li><strong>Use ruler</strong> for diagrams, flowcharts, and logic circuits</li>
+      <li><strong>Label everything</strong> in flowcharts (Start, Stop, Input, Output)</li>
+      <li><strong>Don't leave blanks</strong> in MCQ - educated guesses are better</li>
+      <li><strong>Re-check ASCII conversions</strong> - common careless mistakes</li>
+    </ol>
+  </div>
+
+  <!-- PAGE FOOTER -->
+  <div class="page-footer">
+    <div class="footer-name-big">📘 J. ABIRAJ</div>
+    <div class="footer-role">ICT Teacher</div>
+    <div class="footer-divider"></div>
+    <div class="footer-text">
+      <strong>O/L ICT - Student Quick Reference Guide</strong><br>
+      Master the basics, ace the exam! 🏆
+    </div>
+    <div class="footer-copyright">
+      © 2026 J. Abiraj • For Educational Use
+    </div>
+  </div>
+
+</div>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fd8da7d3eb7a131',t:'MTc3OTA4NjI0OA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

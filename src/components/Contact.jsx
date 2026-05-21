@@ -98,14 +98,14 @@ export default function Contact() {
           style={{ opacity: 0, animation: gridInView ? 'fadeInUp 0.8s ease-out 0.15s forwards' : 'none' }}
         >
           {/* Left Column — Contact link cards */}
-          <div className="lg:col-span-7 flex flex-col gap-4">
+          <div className="lg:col-span-7 flex flex-col gap-4 h-full">
             {contacts.map((contact, idx) => (
               <a
                 key={idx}
                 href={contact.href}
                 target={contact.href.startsWith('http') ? '_blank' : undefined}
                 rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="flex items-center gap-3 sm:gap-5 bg-[#121212]/45 border border-white/5 rounded-2xl p-3.5 sm:p-5 hover:border-[#f59e0b]/35 hover:bg-[#121212]/65 hover:shadow-[0_6px_25px_rgba(245,158,11,0.06)] transition-all duration-300 group"
+                className="flex-1 flex items-center gap-3 sm:gap-5 bg-[#121212]/45 border border-white/5 rounded-2xl p-3.5 sm:p-5 hover:border-[#f59e0b]/35 hover:bg-[#121212]/65 hover:shadow-[0_6px_25px_rgba(245,158,11,0.06)] transition-all duration-300 group"
               >
                 {/* Icon wrapper */}
                 <div className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shrink-0 ${contact.iconBg} ${contact.iconColor} group-hover:scale-105 transition-transform duration-300`}>

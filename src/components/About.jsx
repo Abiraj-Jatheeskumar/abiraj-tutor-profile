@@ -90,12 +90,12 @@ export default function About() {
         </div>
 
         {/* 2-Column Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
 
           {/* Left Column — Biography & Checklist */}
           <div
             ref={bioRef}
-            className="lg:col-span-7 flex flex-col gap-6 relative"
+            className="lg:col-span-7 flex flex-col justify-between gap-6 relative h-full text-left"
             style={{ opacity: 0, animation: bioInView ? 'fadeInUp 0.8s ease-out 0.1s forwards' : 'none' }}
           >
             {/* Visual quotes background */}
@@ -116,7 +116,7 @@ export default function About() {
             </div>
 
             {/* Highlights Checklist */}
-            <div className="flex flex-col gap-4 mt-4 border-t border-white/5 pt-6">
+            <div className="flex flex-col gap-4 mt-auto border-t border-white/5 pt-6">
               {highlights.map(h => (
                 <div key={h.title} className="flex gap-3 sm:gap-4 items-start">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#f59e0b] shrink-0 mt-2" />
@@ -132,12 +132,12 @@ export default function About() {
           {/* Right Column — Professional Grid Stats */}
           <div 
             ref={statsRef} 
-            className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full"
+            className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full h-full"
           >
             {stats.map(({ value, label, sublabel, icon }, i) => (
               <div
                 key={label}
-                className="group relative bg-[#121212]/45 border border-white/5 rounded-2xl p-4 sm:p-6 flex flex-row sm:flex-col items-center sm:items-start gap-4 hover:border-[#f59e0b]/30 hover:bg-[#121212]/60 transition-all duration-300 overflow-hidden"
+                className="group relative bg-[#121212]/45 border border-white/5 rounded-2xl p-4 sm:p-6 flex flex-row sm:flex-col items-center sm:items-start gap-4 hover:border-[#f59e0b]/30 hover:bg-[#121212]/60 transition-all duration-300 overflow-hidden h-full"
                 style={{
                   opacity: 0,
                   animation: statsInView ? `fadeInUp 0.7s ease-out ${0.08 + i * 0.12}s forwards` : 'none',

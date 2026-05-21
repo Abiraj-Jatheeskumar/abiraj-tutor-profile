@@ -35,11 +35,11 @@ export default function Hero() {
       </div>
 
       {/* ── Main content (2-Column Grid) ── */}
-      <div className="relative z-10 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-center pt-28 pb-14 sm:pt-36 sm:pb-20 lg:pt-32 lg:pb-20">
+      <div className="relative z-10 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 w-full grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 lg:gap-20 items-center pt-28 pb-14 sm:pt-36 sm:pb-20 lg:pt-32 lg:pb-20">
         
         {/* Left Column — Copy & Credibility */}
         <div 
-          className="lg:col-span-7 flex flex-col items-start text-left gap-5 sm:gap-6"
+          className="md:col-span-7 flex flex-col items-start text-left gap-5 sm:gap-6"
           style={{ opacity: 0, animation: 'fadeInUp 0.8s ease-out 0.1s forwards' }}
         >
           {/* Badge */}
@@ -92,25 +92,25 @@ export default function Hero() {
           </div>
 
           {/* Quick Info Badges */}
-          <div className="grid grid-cols-3 gap-2 sm:gap-6 pt-5 sm:pt-6 border-t border-white/5 w-full max-w-lg mt-2 text-left">
-            <div>
-              <div className="font-display text-base sm:text-lg md:text-xl font-bold text-[#f59e0b]">BSc(Hons)</div>
-              <div className="font-body text-white/60 text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-wider mt-1.5 leading-tight">CS Reading</div>
+          <div className="flex flex-col sm:grid sm:grid-cols-3 gap-3.5 sm:gap-6 pt-5 sm:pt-6 border-t border-white/5 w-full mt-2 text-left">
+            <div className="flex flex-row items-center justify-between sm:flex-col sm:items-start gap-2 sm:gap-0 border-b border-white/[0.04] sm:border-b-0 pb-2.5 sm:pb-0">
+              <span className="font-display text-sm sm:text-base md:text-lg xl:text-xl font-bold text-[#f59e0b]">BSc(Hons)</span>
+              <span className="font-body text-white/50 text-[10px] md:text-[11px] uppercase tracking-wider sm:mt-1.5 leading-tight">CS Reading</span>
             </div>
-            <div>
-              <div className="font-display text-base sm:text-lg md:text-xl font-bold text-[#f59e0b]">2 Subjects</div>
-              <div className="font-body text-white/60 text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-wider mt-1.5 leading-tight">Chemistry &amp; ICT</div>
+            <div className="flex flex-row items-center justify-between sm:flex-col sm:items-start gap-2 sm:gap-0 border-b border-white/[0.04] sm:border-b-0 pb-2.5 sm:pb-0">
+              <span className="font-display text-sm sm:text-base md:text-lg xl:text-xl font-bold text-[#f59e0b]">2 Subjects</span>
+              <span className="font-body text-white/50 text-[10px] md:text-[11px] uppercase tracking-wider sm:mt-1.5 leading-tight">Chemistry &amp; ICT</span>
             </div>
-            <div>
-              <div className="font-display text-base sm:text-lg md:text-xl font-bold text-[#f59e0b]">Dual Medium</div>
-              <div className="font-body text-white/60 text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-wider mt-1.5 leading-tight">English &amp; Tamil</div>
+            <div className="flex flex-row items-center justify-between sm:flex-col sm:items-start gap-2 sm:gap-0 pb-1.5 sm:pb-0">
+              <span className="font-display text-sm sm:text-base md:text-lg xl:text-xl font-bold text-[#f59e0b]">Dual Medium</span>
+              <span className="font-body text-white/50 text-[10px] md:text-[11px] uppercase tracking-wider sm:mt-1.5 leading-tight">English &amp; Tamil</span>
             </div>
           </div>
         </div>
 
         {/* Right Column — Premium Image Frame */}
         <div 
-          className="lg:col-span-5 flex justify-center relative mt-8 lg:mt-0"
+          className="md:col-span-5 flex justify-center relative mt-8 md:mt-0"
           style={{ opacity: 0, animation: 'fadeInUp 0.8s ease-out 0.35s forwards' }}
         >
           {/* Animated Background Glow behind picture */}
